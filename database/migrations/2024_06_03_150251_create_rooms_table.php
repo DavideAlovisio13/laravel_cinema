@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100)->unique();
             $table->string('alias', 100)->nullable();
-            $table->smallInteger('seats', 4)->unsigned();
+            $table->smallInteger('seats')->unsigned();
             $table->boolean('isense')->default(false);
             $table->decimal('base_price', 4, 2);
             $table->string('img_room', 255)->nullable();
