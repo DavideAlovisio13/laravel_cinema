@@ -12,12 +12,13 @@ class RoomSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(Room $new_room): void
+    public function run(): void
     {
         $path = __DIR__ . '/TableRooms.csv';
         $data = Helper::getCsvData($path);
         foreach ($data as $index => $room) {
             if($index !== 0) {
+                $new_room = new Room();
                 $new_room->name = $room[0];
                 $new_room->alias = $room[1];
                 $new_room->seats = $room[2];
