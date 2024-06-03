@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Room;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
@@ -13,6 +14,8 @@ class RoomController extends Controller
      */
     public function index()
     {
+        $rooms = Room::all();
+        return view('admin.rooms.index', compact('rooms'));
         
     }
 
@@ -37,7 +40,8 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        //
+        return view('admin.rooms.show', compact('room'));
+        
     }
 
     /**
