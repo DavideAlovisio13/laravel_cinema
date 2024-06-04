@@ -35,7 +35,7 @@ class MovieController extends Controller
     {
 
         $data_store = $request->validated();
-        // $data_store['slug'] = Movie::generateSlug($data_store['title']);
+        $data_store['slug'] = Movie::generateSlug($data_store['title']);
         $new_movie = Movie::create($data_store);
         return redirect()->route('admin.movies.show', $new_movie->slug);
         

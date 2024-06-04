@@ -4,7 +4,7 @@
 
 <section>
     <h2 class="text-center tet-uppercase">inserisci un nuovo film</h2>
-    <form class="row g-3" action="{{route('admin.movies.store')}}" method="POST">
+    <form class="row g-3" action="{{route('admin.movies.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="col-md-6">
             <label for="title" class="form-label">title</label>
