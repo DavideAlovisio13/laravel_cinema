@@ -81,6 +81,7 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
-        //
+        $room->delete();
+        return redirect()->route('admin.rooms.index')->with('message', 'La sala' . $room->name . ' è stata eliminata');
     }
 }
