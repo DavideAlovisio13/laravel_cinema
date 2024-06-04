@@ -24,7 +24,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.rooms.create');
     }
 
     /**
@@ -32,7 +32,7 @@ class RoomController extends Controller
      */
     public function store(StoreRoomRequest $request)
     {
-        //
+        
     }
 
     /**
