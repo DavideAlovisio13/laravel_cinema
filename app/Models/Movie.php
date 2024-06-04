@@ -17,12 +17,13 @@ class Movie extends Model
         'thumb',
         'trailer',
         'release_date',
-
+        'slug'
         
     ];
 
     public static function generateSlug($title){
         $slug = Str::slug($title, '-');
+        
         return $slug;
 
     }
