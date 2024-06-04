@@ -31,7 +31,10 @@
                         <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->isense }}</a>
                         </td>
                         <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->base_price}}</a></td>
-                        <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->img_room }}</a></td>
+                        <td>
+                            <a href="{{ route('admin.rooms.show', $room->id) }}"><i class="fa-solid fa-eye"></i></a>
+                            <a href="{{ route('admin.rooms.edit', $room->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

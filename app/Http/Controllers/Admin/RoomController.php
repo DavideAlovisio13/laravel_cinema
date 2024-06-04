@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Room;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
+use Illuminate\Support\Facades\Storage;
 
 class RoomController extends Controller
 {
@@ -16,7 +17,7 @@ class RoomController extends Controller
     {
         $rooms = Room::all();
         return view('admin.rooms.index', compact('rooms'));
-        
+
     }
 
     /**
@@ -33,10 +34,10 @@ class RoomController extends Controller
     public function store(StoreRoomRequest $request)
     {
         $form_data = $request->validated();
-    
-        
+
+
         $newRoom = Room::create($form_data);
-        return redirect()->route('admin.rooms.show', $newRoom->id)->with('message', 'La sala'.$form_data['name'] . ' è stata creata');
+        return redirect()->route('admin.rooms.show', $newRoom->id)->with('message', 'La sala' . $form_data['name'] . ' è stata creata');
 
     }
 
@@ -46,7 +47,7 @@ class RoomController extends Controller
     public function show(Room $room)
     {
         return view('admin.rooms.show', compact('room'));
-        
+
     }
 
     /**
@@ -54,7 +55,7 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        return view('admin.rooms.edit', compact('room'));
     }
 
     /**
@@ -62,7 +63,17 @@ class RoomController extends Controller
      */
     public function update(UpdateRoomRequest $request, Room $room)
     {
-        //
+        $form_data = $request->validated();
+            
+        // if ($request->hasFile('image')) {
+        //     if ($room->image) {
+        //         Storage::delete($room->image);
+        //     }
+        //     $path = Storage::put('uploads', $form_data['image']);
+        // }
+
+        $room->update($form_data);
+        return redirect()->route('admin.rooms.show', $room->id)->with('message', 'La sala' . $form_data['name'] . ' è stata modificata');
     }
 
     /**

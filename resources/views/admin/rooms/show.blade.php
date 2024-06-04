@@ -1,6 +1,13 @@
 @extends('layouts.app')
-@section('title',$room->name)
+@section('title', $room->name)
 @section('content')
+
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+
 
 <div class="p-2 rounded-3 overflow-hidden">
     <div class=" pb-0 hype-unselectable">
