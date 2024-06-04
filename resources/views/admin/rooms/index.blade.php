@@ -2,7 +2,7 @@
 @section('title', 'Sale')
 @section('content')
 
-<main id="all-rooms">
+<section id="all-rooms">
     <div class="container hype-unselectable">
         <div class="d-flex justify-content-center mt-3">
             <h2 class="py-4 hype-text-shadow text-white">Le nostre Sale</h2>
@@ -48,7 +48,7 @@
         </table>
         @include('admin.partials.modal-delete')
     </div>
-</main>
+</section>
 
 
 {{-- <a href="{{route('admin.rooms.create')}}" class="btn btn-primary">
