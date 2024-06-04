@@ -32,7 +32,12 @@ class RoomController extends Controller
      */
     public function store(StoreRoomRequest $request)
     {
+        $form_data = $request->validated();
+    
         
+        $newRoom = Room::create($form_data);
+        return redirect()->route('admin.rooms.show', $newRoom->id)->with('message', 'La sala'.$form_data['name'] . ' è stata creata');
+
     }
 
     /**
