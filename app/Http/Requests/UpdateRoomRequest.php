@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateRoomRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class UpdateRoomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +23,33 @@ class UpdateRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => [
+                'required',
+                'min:3',
+                'max:100',
+                Rule::unique('rooms')->ignore($this->room->id),
+            ],
+            'alias' => 'max:100|nullable',
+            'seats' => 'integer',
+            'isense' => 'boolean',
+            'base_price' => 'decimal:2',
+            'img_room' => 'nullable|max:255|image'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Questo campo è obbligatorio',
+            'name.unique' => 'Il nome scelto è già esistente',
+            'name.max' => 'Il campo deve avere massimo :max caratteri',
+            'name.min' => 'Il campo deve avere minimo :min caratteri',
+            'alias.max' => 'Il campo deve avere massimo :max caratteri',
+            'seats.integer' => 'Questo campo è obbligatorio',
+            'isense.boolean' => 'Inserire valore 0 o 1',
+            'base_price.decimal' => 'Inserire un valore decimale',
+            'img_room.max' => 'Il campo deve avere :max caratteri',
+            'img_room.image' => 'Il campo deve contenere un file immagine',
+
         ];
     }
 }

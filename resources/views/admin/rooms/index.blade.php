@@ -31,11 +31,22 @@
                         <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->isense }}</a>
                         </td>
                         <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->base_price}}</a></td>
-                        <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->img_room }}</a></td>
+                        <td class="d-flex align-items-center gap-2">
+                            <a href="{{ route('admin.rooms.show', $room->id) }}"><i class="fa-solid fa-eye"></i></a>
+                            <a href="{{ route('admin.rooms.edit', $room->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <form action="{{ route('admin.rooms.destroy', $room->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn p-0 delete-button" data-item-title="{{ $room->name }}"><i class="fa-solid fa-trash" style="color: #0A58CA"></i></button>
+
+
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        @include('admin.partials.modal-delete')
     </div>
 </main>
 
