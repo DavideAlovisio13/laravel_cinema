@@ -31,6 +31,12 @@ class MovieController extends Controller
      */
     public function store(StoreMovieRequest $request)
     {
+
+        $data_store = $request->validated();
+        $data_store['slug'] = Movie::generateSlug($data_store['title']);
+        $new_movie = Movie::create($data_store);
+        return redirect()->route('admin.movies.show', $new_movie->slug);
+        
     }
     
     /**
@@ -38,8 +44,10 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        return view('admin.movies.show',compact('movie'));
-        //
+
+         
+        return view('admin.movies.show', compact('movie'));
+
     }
 
     /**
@@ -47,7 +55,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        return view('admin.movies.edit', compact('movie'));
     }
 
     /**
@@ -55,7 +63,9 @@ class MovieController extends Controller
      */
     public function update(UpdateMovieRequest $request, Movie $movie)
     {
-        //
+        $data_update = $request->validated();
+        $movie->update($data_update);
+        return redirect()->route('admin.movies.show', $movie->slug)->with('message', $movie->title . 'modificato con successo');
     }
 
     /**
@@ -63,6 +73,7 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+        return redirect()->route('admin.movies.index')->with('message', $movie->title . 'eliminato con successo');
     }
 }
