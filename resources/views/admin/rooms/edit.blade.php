@@ -52,7 +52,7 @@
     </div>
 
     <div class="mb-3">
-        <img id="upload_preview" src="">
+        <img id="upload_preview" src="" class="w-50 mb-3">
         <label for="image" class="form-label">Immagine della sala</label>
         <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
             value="{{ $room->image }}">

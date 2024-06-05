@@ -146,3 +146,21 @@ var myPieChart = new Chart(ctx, {
     cutoutPercentage: 80,
   },
 });
+
+
+if(image){
+  image.addEventListener("change",()=>{
+      //console.log(image.files[0]);
+      //prendi elemento img dove voglio vedere anteprima
+      const preview = document.getElementById('upload_preview');
+      //creo nuovo oggetto file reader
+      const objFileReader = new FileReader();
+      //uso il metodo readAsDataURL dell'oggetto creato per leggere il file
+      objFileReader.readAsDataURL(image.files[0]);
+      //al termine della lettura del file quindi dopo .onload
+      objFileReader.onload = function(event){
+          //metto nel campo src della preview l'immagine caricata e letta precedentemente
+          preview.src = event.target.result;
+      }
+  });
+}

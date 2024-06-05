@@ -25,7 +25,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('admin.rooms.create');
+        return view('admin.rooms.create',);
     }
 
     /**
@@ -34,10 +34,14 @@ class RoomController extends Controller
     public function store(StoreRoomRequest $request)
     {
         $form_data = $request->validated();
+        if ($request->hasFile('image')) {
+            $path = Storage::put('img_room', $request->image);
+            $form_data['img_room'] = $path;
+        }
 
 
-        $newRoom = Room::create($form_data);
-        return redirect()->route('admin.rooms.show', $newRoom->id)->with('message', 'La sala' . $form_data['name'] . ' è stata creata');
+        $room = Room::create($form_data);
+        return redirect()->route('admin.rooms.show', $room->id)->with('message', 'La sala' . $form_data['name'] . ' è stata creata');
 
     }
 
