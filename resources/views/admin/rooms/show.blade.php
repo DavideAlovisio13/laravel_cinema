@@ -12,7 +12,7 @@
 <div class="p-2 rounded-3 overflow-hidden">
     <div class=" pb-0 hype-unselectable">
         <div id="{{ $room->name }}" class="w-100 img-fluid">
-            <img src="https://picsum.photos/300/300" alt="">
+            <img src="{{ $room->img_room }}" alt=" {{ $room->name }}">
         </div>
         <table class="table table-dark table-hover shadow my-5 hype-unselectable">
             <thead>

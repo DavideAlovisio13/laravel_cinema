@@ -222,3 +222,9 @@ Storage::put('images', $data['image']); //ritorna il path
 <img src="{{ asset('storage/' . $post->cover_image) }}">
 
 ```
+
+## REMEMBER
+
+```bash
+    add pack for charts:  npm install chart.js --save
+```

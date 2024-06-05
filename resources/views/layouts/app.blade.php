@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -23,7 +24,7 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-lg" id="navbar_app">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
@@ -91,7 +92,7 @@
             </div>
         </nav>
 
-        <main class="container h-100">
+        <main class="container ">
             @yield('content')
         </main>
     </div>

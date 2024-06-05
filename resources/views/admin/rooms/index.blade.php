@@ -2,53 +2,53 @@
 @section('title', 'Sale')
 @section('content')
 
-<section id="all-rooms">
-    <div class="container hype-unselectable">
-        <div class="d-flex justify-content-center mt-3">
-            <h2 class="py-4 hype-text-shadow text-white">Le nostre Sale</h2>
-        </div>
-        <table class="table table-dark table-hover shadow my-5 hype-unselectable table-clickable">
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#id</th>
-                    <th class="d-none d-lg-table-cell" scope="col">Nome</th>
-                    <th class="d-none d-lg-table-cell" scope="col">Colore</th>
-                    <th scope="col">Posti a sedere</th>
-                    <th scope="col">ISense</th>
-                    <th scope="col">Prezzo Base</th>
-                    <th scope="col">Vista</th>
+                    <th scope="col" class="text-danger bg-transparent">Id</th>
+                    <th scope="col" class="text-danger bg-transparent">Nome</th>
+                    <th scope="col" class="text-danger bg-transparent">Colore</th>
+                    <th scope="col" class="text-danger bg-transparent">Posti a sedere</th>
+                    <th scope="col" class="text-danger bg-transparent">Isense</th>
+                    <th scope="col" class="text-danger bg-transparent">Azioni</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider ">
                 @foreach ($rooms as $room)
                     <tr>
-                        <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->id }} </a></td>
-                        <td class=" d-lg-table-cell"><a
-                                href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->name }}</a></td>
-                        <td class=" d-lg-table-cell"><a
-                                href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->alias }}</a></td>
-                        <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->seats }}</a></td>
-                        <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->isense }}</a>
+                        <td class="bg-transparent text-black border-bottom-0">{{ $room->id }}</td>
+                        <td class="bg-transparent text-black border-bottom-0">{{ $room->name }}</td>
+                        <td class="bg-transparent text-black border-bottom-0">{{ $room->alias }}</td>
+                        <td class="bg-transparent text-black border-bottom-0">{{ $room->seats }}</td>
                         </td>
-                        <td><a href="{{ route('admin.rooms.show', $room->id) }}">{{ $room->base_price}}</a></td>
-                        <td class="d-flex align-items-center gap-2">
-                            <a href="{{ route('admin.rooms.show', $room->id) }}"><i class="fa-solid fa-eye"></i></a>
-                            <a href="{{ route('admin.rooms.edit', $room->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <form action="{{ route('admin.rooms.destroy', $room->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn p-0 delete-button" data-item-title="{{ $room->name }}"><i class="fa-solid fa-trash" style="color: #0A58CA"></i></button>
-
-
+                        <td class="bg-transparent text-black border-bottom-0">{{ $room->isense }}</td>
+                        </td>
+                        <td
+                            class=" bg-transparent text-black d-flex border-bottom-0 flex-column justify-content-center align-items-center">
+                            <a href="{{ route('admin.rooms.show', $room->id) }}"><i
+                                    class="fa-solid text-danger fa-eye"></i></a>
+                            <a href="{{ route('admin.rooms.edit', $room->id) }}"><i
+                                    class="fa-solid text-danger fa-pen"></i></a>
+                            <form action="{{ route('admin.rooms.destroy', $room->id) }}" method="POST"
+                                class="d-inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete-button border-0 bg-transparent"
+                                    data-item-title="{{ $room->name }}">
+                                    <i class="fa-solid text-danger fa-trash"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        @include('admin.partials.modal-delete')
     </div>
-</section>
+    <a href="{{ route('admin.rooms.create') }}" class="btn btn-danger">Create a new post</a>
+</div>
+@include('admin.partials.modal-delete')
 
 
 {{-- <a href="{{route('admin.rooms.create')}}" class="btn btn-primary">
