@@ -12,6 +12,6 @@ class SlotSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }

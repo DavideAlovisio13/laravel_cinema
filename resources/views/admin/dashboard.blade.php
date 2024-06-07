@@ -205,7 +205,7 @@
                                             <div id="carousel">
                                                 @foreach ($rooms as $room)
                                                     <div class="item mx-4">
-                                                        <img src="{{ $room->thumb }}" alt=" {{ $room->title }}" />
+                                                        <img src="{{ $room->img_room }}" alt=" {{ $room->title }}" />
                                                     </div>
                                                 @endforeach
                                                 <div class="item mx-4">
