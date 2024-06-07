@@ -96,16 +96,29 @@ a {
 #admin {
     height: 100vh;
     overflow: hidden;
-    display: flex;    
+    display: flex;
+
+    /* sidebar */
     #sidebar {
-        background-color: $black;
+        width: 260px;
+        color: $content-bg;
+        background-color: $sidebar-bg;
+        .logo {
+            padding: 7px 12px;
+            a {
+                padding: 11px 0;
+            }
+        }
     }
+
+    /* main content */
     #content {
         flex-grow: 1;
         overflow-y: scroll;
         margin-right: -10px; // for scrollbar
         main {
             height: 100%;
+            padding: 0 16px;
         }
 
         /* header */

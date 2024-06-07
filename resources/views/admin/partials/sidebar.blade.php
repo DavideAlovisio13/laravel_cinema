@@ -1,5 +1,8 @@
-<nav id="sidebar" class="bg-dark navbar-dark">
-    <a href="/" class="nav-link text-white">
+<nav id="sidebar" class="navbar-dark">
+    <div class="logo text-center">
+        <a href="#" class="nav-link text-uppercase">nome/logo cinema</a>
+    </div>
+    {{-- <a href="/" class="nav-link text-white">
         <h2 class="p-2">
             <i class="fa-solid fa-square-rss"></i> Boolpress
         </h2>
@@ -30,5 +33,5 @@
             </a>
         </li>
 
-    </ul>
+    </ul> --}}
 </nav>
