@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MovieRoom;
 use App\Models\Movie;
 use App\Models\Room;
+use App\Models\Slot;
 use App\Http\Requests\StoreMovieRoomRequest;
 use App\Http\Requests\UpdateMovieRoomRequest;
 
@@ -28,7 +29,10 @@ class MovieRoomController extends Controller
      */
     public function create()
     {
-        //
+        $movies = Movie::all();
+        $rooms = Room::all();
+        $slots = Slot::all();
+        return view('admin.movies_rooms.create', compact('movies', 'rooms', 'slots'));    
     }
 
     /**
@@ -36,7 +40,7 @@ class MovieRoomController extends Controller
      */
     public function store(StoreMovieRoomRequest $request)
     {
-        //
+        
     }
 
     /**
