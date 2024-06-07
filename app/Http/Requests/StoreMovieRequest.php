@@ -24,12 +24,11 @@ class StoreMovieRequest extends FormRequest
         return [
             'title' => 'required|string|max:200|unique:movies',
             'description' => 'nullable',
-            'minutes' => 'required|string|max:20',
+            'minutes' => 'required|integer|max:400',
             'language' => 'required|string|max:20',
-            'thumb' => 'nullable|max:255|image',
+            'thumb' => 'string|nullable|max:255',
             'trailer' => 'nullable|max:255|string',
             'release_date' => 'required|date',
-
         ];
     }
 
@@ -47,7 +46,6 @@ class StoreMovieRequest extends FormRequest
             'trailer.max' => 'Il campo deve avere massimo :max caratteri',
             'release_date.required' => 'Questo campo è obbligatorio',
             'release_date.date' => 'Inserire una data valida',
-            
         ];
     }
 }

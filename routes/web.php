@@ -27,7 +27,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('rooms',RoomController::class)->parameters(['rooms' => 'room:id']);
     Route::resource('movies',MovieController::class)->parameters(['movies' => 'movie:slug']);
-    Route::resource('slots',SlotController::class)->parameters(['Slots' => 'slot:id']);
+    Route::resource('slots',SlotController::class)->parameters(['Slots' => 'slot:id'])->except('show');
     Route::resource('movies_rooms', MovieRoomController::class)->parameters(['movies_rooms' => 'movies_rooms:id']);
 });
 

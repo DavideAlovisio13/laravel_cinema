@@ -13,7 +13,8 @@ class SlotController extends Controller
      */
     public function index()
     {
-        //
+        $slots = Slot::all();
+        return view('admin.slots.index', compact('slots'));
     }
 
     /**
@@ -21,7 +22,7 @@ class SlotController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.slots.create');
     }
 
     /**
@@ -29,7 +30,14 @@ class SlotController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'time_slot' => 'required|max:255',
+            'start_time' => 'required|dateFormat:H:i',
+            'end_time' => 'required|dateFormat:H:i|after:start_time',
+        ]);
+        $form_data = $request->all();
+        $newSlot = Slot::create($form_data);
+        return redirect()->route('admin.slots.index');
     }
 
     /**
@@ -45,7 +53,7 @@ class SlotController extends Controller
      */
     public function edit(Slot $slot)
     {
-        //
+        return view('admin.slots.edit', compact('slot'));
     }
 
     /**
@@ -53,7 +61,15 @@ class SlotController extends Controller
      */
     public function update(Request $request, Slot $slot)
     {
-        //
+        $request->validate([
+            'time_slot' => 'required|max:255',
+            'start_time' => 'required|dateFormat:H:i',
+            'end_time' => 'required|dateFormat:H:i|after:start_time',
+        ]);
+        $form_data = $request->all();
+        $slot->update($form_data);
+        return redirect()->route('admin.slots.index');
+
     }
 
     /**
@@ -61,6 +77,8 @@ class SlotController extends Controller
      */
     public function destroy(Slot $slot)
     {
-        //
+        $slot->delete();
+        return redirect()->route('admin.slots.index');
+
     }
 }

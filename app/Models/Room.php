@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','alias','seats','isense','base_price','img_room'];
+    protected $guarded = [];
 
     public function movies_rooms(){
         return $this->belongsToMany(MovieRoom::class);
