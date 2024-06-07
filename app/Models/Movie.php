@@ -9,17 +9,7 @@ use Illuminate\Support\Str;
 class Movie extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'title',
-        'description',
-        'minutes',
-        'language',
-        'thumb',
-        'trailer',
-        'release_date',
-        'slug'
-        
-    ];
+    protected $guarded = [];
 
     public static function generateSlug($title){
         $slug = Str::slug($title, '-');
