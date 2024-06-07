@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\MovieController;
+use App\Http\Controllers\Admin\SlotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('rooms',RoomController::class)->parameters(['rooms' => 'room:id']);
     Route::resource('movies',MovieController::class)->parameters(['movies' => 'movie:slug']);
+    Route::resource('slots',SlotController::class)->parameters(['Slots' => 'slot:id']);
 
 });
 
