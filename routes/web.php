@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MovieRoomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -27,7 +28,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('rooms',RoomController::class)->parameters(['rooms' => 'room:id']);
     Route::resource('movies',MovieController::class)->parameters(['movies' => 'movie:slug']);
     Route::resource('slots',SlotController::class)->parameters(['Slots' => 'slot:id']);
-
+    Route::resource('movies_rooms', MovieRoomController::class)->parameters(['movies_rooms' => 'movies_rooms:id']);
 });
 
 // group: raggruppa tutte le rotte che posso avere qualcosa in comune

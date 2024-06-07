@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\MovieRoom;
+use App\Models\Movie;
+use App\Models\Room;
 use App\Http\Requests\StoreMovieRoomRequest;
 use App\Http\Requests\UpdateMovieRoomRequest;
 
@@ -15,7 +17,10 @@ class MovieRoomController extends Controller
      */
     public function index()
     {
-        //
+        $movies_rooms = MovieRoom::all();
+        $movies = Movie::all();
+        $rooms = Room::all();
+        return view('admin.movies_rooms.index', compact('movies_rooms', 'movies', 'rooms'));
     }
 
     /**
