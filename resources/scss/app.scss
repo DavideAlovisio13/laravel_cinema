@@ -109,6 +109,19 @@ a {
                 padding: 11px 0;
             }
         }
+        .user {
+            padding: 20px 0;
+            .profile {
+                padding: 20px 0;
+                margin: 0 15px;
+                border-top: 1px solid $content-bg;
+                border-bottom: 1px solid $content-bg;
+                .profile-picture {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
     }
 
     /* main content */
@@ -184,10 +197,6 @@ a {
                         }
                     }
                 }
-            }
-            .profile-picture {
-                width: 40px;
-                aspect-ratio: 1 / 1;
             }
         }
     }
