@@ -27,4 +27,8 @@ class Movie extends Model
         return $slug;
 
     }
+
+    public function movies_rooms(){
+        return $this->belongsToMany(MovieRoom::class);
+    }
 }
