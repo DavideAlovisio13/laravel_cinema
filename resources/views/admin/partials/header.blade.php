@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle position-relative" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-bell"></i>
                             <span class="badge rounded-pill badge-notification bg-danger">1</span>
