@@ -74,6 +74,29 @@ a {
     }
 }
 
+//************************** admin layout **************************
+#admin {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;    
+    #sidebar {
+        background-color: $black;
+    }
+    #content {
+        flex-grow: 1;
+        overflow-y: scroll;
+        main {
+            height: 100%;
+        }
+        header {
+            .profile-picture {
+                width: 40px;
+                aspect-ratio: 1 / 1;
+            }
+        }
+    }
+}
+
 //************************** dashboard **************************
 
 .card {
