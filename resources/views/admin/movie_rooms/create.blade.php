@@ -4,7 +4,7 @@
 
 <section>
     <h2 class="text-center tet-uppercase">Create a new projection</h2>
-    <form class="row g-3" action="{{ route('admin.movies_rooms.store') }}" method="POST" enctype="multipart/form-data">
+    <form class="row g-3" action="{{ route('admin.movie_rooms.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="movie_id">Movie</label>
         <select name="movie_id" id="movie_id" class="form-label ">
@@ -38,10 +38,10 @@
                 <label for="date_projection">Date Projection</label>
                 <input type="date" name="date_projection" class="form-control w-25" id="date_projection" value="{{ old('date_projection') }}">
             </div>
-            <div class="w-50">
+            {{-- <div class="w-50">
                 <label for="ticket_price">Ticket Price</label>
                 <input type="text" name="ticket_price" class="form-control w-25" id="price" value="{{ old('ticket_price') }}">
-            </div>
+            </div> --}}
         </div>
 
 

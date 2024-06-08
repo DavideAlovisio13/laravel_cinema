@@ -21,7 +21,7 @@ class MovieRoomController extends Controller
         $movies_rooms = MovieRoom::all();
         $movies = Movie::all();
         $rooms = Room::all();
-        return view('admin.movies_rooms.index', compact('movies_rooms', 'movies', 'rooms'));
+        return view('admin.movie_rooms.index', compact('movies_rooms', 'movies', 'rooms'));
     }
 
     /**
@@ -59,7 +59,7 @@ class MovieRoomController extends Controller
         if ($request->has('slot_id')) {
             $newMovieRoom->slot()->associate($request->slot_id);
         }
-        return redirect()->route('admin.movie_rooms.index')->with('message', 'La sala' . $form_data['name'] . ' è stata creata');
+        return redirect()->route('admin.movie_rooms.index')->with('message', 'ok');
      }
 
     /**

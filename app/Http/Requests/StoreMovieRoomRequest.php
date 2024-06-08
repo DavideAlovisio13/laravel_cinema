@@ -23,7 +23,7 @@ class StoreMovieRoomRequest extends FormRequest
     {
         return [
             'date_projection' => 'required|date',
-            'ticket_price' => 'required|numeric',
+            /* 'ticket_price' => 'required|numeric', */
             'movie_id' => 'required|integer',
             'room_id' => 'required|integer',
             'slot_id' => 'required|integer',

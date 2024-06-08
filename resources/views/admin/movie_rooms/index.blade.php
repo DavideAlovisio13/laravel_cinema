@@ -8,17 +8,15 @@
                     <tr>
                         <th scope="col" class="text-danger bg-transparent">Id</th>
                         <th scope="col" class="text-danger bg-transparent">Title</th>
-                        <th scope="col" class="text-danger bg-transparent">Description</th>
-                        <th scope="col" class="text-danger bg-transparent">Language</th>
-                        <th scope="col" class="text-danger bg-transparent">Ticket_price</th>
-                        <th scope="col" class="text-danger bg-transparent">Posti a sedere</th>
+                        <th scope="col" class="text-danger bg-transparent">Room</th>
+                        <th scope="col" class="text-danger bg-transparent">Ticket Price</th>
+                        <th scope="col" class="text-danger bg-transparent">Seats</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider ">
                     @foreach ($movies_rooms as $projection)
                         <tr>
-                            <td class="bg-transparent text-black border-bottom-0">{{ $projection->ticket_price }}</td>
-                            <td class="bg-transparent text-black border-bottom-0">{{ $projection->date_projection }}</td>
+                            <td class="bg-transparent text-black border-bottom-0">{{ $projection->id }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->movie->title }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->room->name }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->ticket_price }}</td>
@@ -29,7 +27,7 @@
             </table>
         </div>       
     </div>
-    <a href="{{ route('admin.movies_rooms.create') }}" class="btn btn-danger">Create a new projection</a>
+    <a href="{{ route('admin.movie_rooms.create') }}" class="btn btn-danger">Create a new projection</a>
 
 </div>
 @include('admin.partials.modal-delete')
