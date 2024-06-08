@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'Crea nuova sala')
+@extends('layouts.admin')
+@section('title', 'Add room')
 @section('content')
 <section>
 

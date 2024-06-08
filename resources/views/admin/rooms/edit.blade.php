@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'Crea nuova sala')
+@extends('layouts.admin')
+@section('title', 'Edit ' . $room->name)
 @section('content')
 <h2 class="text-center">Modifica Sala</h2>
 <form action="{{route('admin.rooms.update', $room->id)}}" method="POST" enctype="multipart/form-data">

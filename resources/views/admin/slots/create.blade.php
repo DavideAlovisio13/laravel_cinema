@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'Crea nuova fascia oraria')
+@extends('layouts.admin')
+@section('title', 'Add programmation')
 @section('content')
 <section>
 

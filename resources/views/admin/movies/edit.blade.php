@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'modifica'. $movie->title)
+@extends('layouts.admin')
+@section('title', 'Edit '. $movie->title)
 @section('content')
 
 <section>
