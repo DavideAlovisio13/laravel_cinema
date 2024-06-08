@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('title', 'Projections')
 @section('content')
-    <div class="card my-5">
-        <div class="card-body">
-            <table class="table">
-                <thead>
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table">
+            <thead>
                     <tr>
                         <th scope="col" class="text-danger bg-transparent">Id</th>
                         <th scope="col" class="text-danger bg-transparent">Title</th>
@@ -27,8 +27,11 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>        
+        </div>       
     </div>
-    @include('admin.partials.modal-delete')
+    <a href="{{ route('admin.movies_rooms.create') }}" class="btn btn-danger">Create a new projection</a>
+
+</div>
+@include('admin.partials.modal-delete')
 
 @endsection
