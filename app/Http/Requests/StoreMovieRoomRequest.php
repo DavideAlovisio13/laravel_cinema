@@ -11,7 +11,7 @@ class StoreMovieRoomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreMovieRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'date_projection' => 'required|date',
+            'ticket_price' => 'required|numeric',
+            'movie_id' => 'required|integer',
+            'room_id' => 'required|integer',
+            'slot_id' => 'required|integer',
         ];
     }
 }
