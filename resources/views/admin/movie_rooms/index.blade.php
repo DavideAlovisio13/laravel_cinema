@@ -33,7 +33,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="delete-button border-0 bg-transparent"
-                                            data-item-title="{{ $projection->title }}">
+                                            data-item-title="{{ $projection->id }}">
                                             <i class="fa-solid text-danger fa-trash"></i>
                                         </button>
                                     </form>
