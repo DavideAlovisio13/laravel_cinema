@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movie_room', function (Blueprint $table) {
+        //ho modificato sul mio phpMyAdmin il nome della tabella in 'movie_rooms'
+        Schema::create('movie_rooms', function (Blueprint $table) {
             $table->id();
             $table->date('date_projection');
             $table->decimal('ticket_price', 4, 2);

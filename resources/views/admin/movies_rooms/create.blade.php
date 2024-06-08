@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'inserisci una nuova proiezione')
+@extends('layouts.admin')
+@section('title', 'inserisci un nuovo film')
 @section('content')
 
 <section>

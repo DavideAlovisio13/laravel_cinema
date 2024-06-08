@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'Crea nuova sala')
+@extends('layouts.admin')
+@section('title', 'Edit ' . $slot->time_slot)
 @section('content')
 <h2 class="text-center">Modifica fascia oraria</h2>
 <form action="{{route('admin.slots.update', $slot->id)}}" method="POST" enctype="multipart/form-data">
