@@ -32,7 +32,7 @@ class MovieRoomController extends Controller
         $movies = Movie::all();
         $rooms = Room::all();
         $slots = Slot::all();
-        return view('admin.movies_rooms.create', compact('movies', 'rooms', 'slots'));    
+        return view('admin.movie_rooms.create', compact('movies', 'rooms', 'slots'));    
     }
 
     /**
@@ -40,8 +40,27 @@ class MovieRoomController extends Controller
      */
     public function store(StoreMovieRoomRequest $request)
     {
-        
-    }
+        $form_data = $request->validated();
+        $newMovieRoom = new MovieRoom();
+        $room = Room::findOrFail($form_data['room_id']);
+        if($room->isense == 1 ){
+            $form_data['ticket_price'] = $room->base_price + 3;
+        } else{
+            $form_data['ticket_price'] = $room->base_price;
+        }
+        $newMovieRoom->fill($form_data);
+        $newMovieRoom->save();
+        if ($request->has('room_id')) {
+            $newMovieRoom->room()->associate($request->room_id);
+        }
+        if ($request->has('movie_id')) {
+            $newMovieRoom->movie()->associate($request->movie_id);
+        }
+        if ($request->has('slot_id')) {
+            $newMovieRoom->slot()->associate($request->slot_id);
+        }
+        return redirect()->route('admin.movie_rooms.index')->with('message', 'La sala' . $form_data['name'] . ' è stata creata');
+     }
 
     /**
      * Display the specified resource.
