@@ -55,7 +55,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('admin.movies_rooms.index') }}" class="nav-link d-flex align-items-center">
+            <a href="{{ route('admin.movie_rooms.index') }}" class="nav-link d-flex align-items-center">
                 <i class="fa-solid fa-video"></i> Projections
             </a>
         </li>

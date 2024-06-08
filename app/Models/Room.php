@@ -10,7 +10,7 @@ class Room extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function movies_rooms(){
+    public function movies(){
         return $this->belongsToMany(MovieRoom::class);
     }
 }
