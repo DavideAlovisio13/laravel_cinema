@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between my-4">
-            <h1 class="h3 mb-0 text-gray-800 text-danger fs-1">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800 fs-1">Dashboard</h1>
         </div>
 
         <!-- Content Row -->
@@ -19,12 +19,12 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bolder fs-5 text-danger text-uppercase mb-2">
+                                <div class="text-xs font-weight-bolder fs-5 text-uppercase mb-2">
                                     guadagni (Mensili)</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas text-danger fa-calendar fa-2x text-gray-300"></i>
+                                <i class="fas  fa-calendar fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -37,12 +37,12 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bolder fs-5 text-danger text-uppercase mb-2">
+                                <div class="text-xs font-weight-bolder fs-5  text-uppercase mb-2">
                                     Guadagni (Annuali)</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas text-danger fa-dollar-sign fa-2x text-gray-300"></i>
+                                <i class="fas  fa-dollar-sign fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bolder fs-5 text-danger text-uppercase mb-2">
+                                <div class="text-xs font-weight-bolder fs-5  text-uppercase mb-2">
                                     Attività
                                 </div>
                                 <div class="row no-gutters align-items-center">
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas text-danger fa-clipboard-list fa-2x text-gray-300"></i>
+                                <i class="fas  fa-clipboard-list fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -84,12 +84,12 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bolder fs-5 text-danger text-uppercase mb-2">
+                                <div class="text-xs font-weight-bolder fs-5  text-uppercase mb-2">
                                     Richieste pendenti</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas text-danger fa-comments fa-2x text-gray-300"></i>
+                                <i class="fas  fa-comments fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-danger">Panoramica Guadagni</h6>
+                        <h6 class="m-0 font-weight-bold ">Panoramica Guadagni</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body my-5">
@@ -122,7 +122,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-danger">Fonti di reddito</h6>
+                        <h6 class="m-0 font-weight-bold ">Fonti di reddito</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -131,7 +131,7 @@
                         </div>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
-                                <i class="fas fa-circle text-danger"></i> Direct
+                                <i class="fas fa-circle "></i> Direct
                             </span>
                             <span class="mr-2">
                                 <i class="fas fa-circle text-success"></i> Social
@@ -154,8 +154,8 @@
                 <!-- Project Card Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-danger">Films</h6>
-                        <a href="{{ route('admin.movies.index') }}" class="text-danger">Mostra tutti i film</a>
+                        <h6 class="m-0 font-weight-bold ">Films</h6>
+                        <a href="{{ route('admin.movies.index') }}" class="">Mostra tutti i film</a>
                     </div>
                     <div class="card-body">
                         @foreach ($movies as $movie)
@@ -182,9 +182,9 @@
                 <!-- Illustrations -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-danger">Sale</h6>
+                        <h6 class="m-0 font-weight-bold ">Sale</h6>
                         <div>
-                            <a href="{{ route('admin.rooms.index') }}" class="text-danger">Mostra le sale</a>
+                            <a href="{{ route('admin.rooms.index') }}" class="">Mostra le sale</a>
                         </div>
                     </div>
                     <div class="card-body">

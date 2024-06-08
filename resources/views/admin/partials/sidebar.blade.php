@@ -36,9 +36,35 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
+    <ul id="routes-list" class="navbar-nav">
+        <li>
+            <a href="{{ route('admin.dashboard') }}" class="nav-link d-flex align-items-center">
+                <i class="fa-solid fa-building-columns"></i> Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('admin.movies.index') }}" class="nav-link d-flex align-items-center">
+                <i class="fa-solid fa-film"></i> Movies
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('admin.rooms.index') }}" class="nav-link d-flex align-items-center">
+                <i class="fa-solid fa-person-booth"></i> Rooms
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('admin.movies_rooms.index') }}" class="nav-link d-flex align-items-center">
+                <i class="fa-solid fa-video"></i> Projections
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('admin.slots.index') }}" class="nav-link d-flex align-items-center">
+                <i class="fa-solid fa-clock"></i> Programmations
+            </a>
+        </li>
+    </ul>
     {{-- <a href="/" class="nav-link text-white">
         <h2 class="p-2">
             <i class="fa-solid fa-square-rss"></i> Boolpress
