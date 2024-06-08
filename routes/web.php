@@ -27,8 +27,8 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('rooms',RoomController::class)->parameters(['rooms' => 'room:id']);
     Route::resource('movies',MovieController::class)->parameters(['movies' => 'movie:slug']);
-    Route::resource('slots',SlotController::class)->parameters(['Slots' => 'slot:id'])->except('show');
-    Route::resource('movie_rooms', MovieRoomController::class)->parameters(['movie_rooms' => 'movie_rooms:id']);
+    Route::resource('slots',SlotController::class)->parameters(['slots' => 'slot:id'])->except('show');
+    Route::resource('movie_rooms', MovieRoomController::class)->parameters(['movieRoom' => 'movie_rooms:id']);
 });
 
 // group: raggruppa tutte le rotte che posso avere qualcosa in comune

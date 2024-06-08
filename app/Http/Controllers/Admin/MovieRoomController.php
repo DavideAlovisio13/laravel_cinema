@@ -18,10 +18,10 @@ class MovieRoomController extends Controller
      */
     public function index()
     {
-        $movies_rooms = MovieRoom::all();
+        $movieRoom = MovieRoom::all();
         $movies = Movie::all();
         $rooms = Room::all();
-        return view('admin.movie_rooms.index', compact('movies_rooms', 'movies', 'rooms'));
+        return view('admin.movie_rooms.index', compact('movieRoom', 'movies', 'rooms'));
     }
 
     /**
@@ -67,7 +67,8 @@ class MovieRoomController extends Controller
      */
     public function show(MovieRoom $movieRoom)
     {
-        //
+        return view('admin.movie_rooms.show', compact('movieRoom'));
+
     }
 
     /**

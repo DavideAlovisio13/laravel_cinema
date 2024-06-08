@@ -1,6 +1,7 @@
 @extends('layouts.admin')
-@section('title',$movie->title)
+@section('title','Projection')
 @section('content')
-<h1>{{$movie->title}}</h1>
+
+movie_room show
 
 @endsection
