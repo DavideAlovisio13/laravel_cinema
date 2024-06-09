@@ -15,7 +15,7 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card shadow h-100 py-2">
+                <div class="card h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -33,7 +33,7 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card shadow h-100 py-2">
+                <div class="card  h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -51,7 +51,7 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card shadow h-100 py-2">
+                <div class="card  h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -80,7 +80,7 @@
 
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card shadow h-100 py-2">
+                <div class="card  h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -103,7 +103,7 @@
 
             <!-- Area Chart -->
             <div class="col-xl-8 col-lg-7">
-                <div class="card shadow mb-4">
+                <div class="card  mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold ">Panoramica Guadagni</h6>
@@ -119,7 +119,7 @@
 
             <!-- Pie Chart -->
             <div class="col-xl-4 col-lg-5">
-                <div class="card shadow mb-4">
+                <div class="card  mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold ">Fonti di reddito</h6>
@@ -152,7 +152,7 @@
             <div class="col-lg-6 mb-4">
 
                 <!-- Project Card Example -->
-                <div class="card shadow mb-4">
+                <div class="card  mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold ">Films</h6>
                         <a href="{{ route('admin.movies.index') }}" class="">Mostra tutti i film</a>
@@ -180,7 +180,7 @@
             <div class="col-lg-6 mb-4">
 
                 <!-- Illustrations -->
-                <div class="card shadow mb-4">
+                <div class="card  mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold ">Sale</h6>
                         <div>

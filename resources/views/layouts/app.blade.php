@@ -55,7 +55,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('admin.movies.index') }}">Movies</a>
-                                    <a class="dropdown-item" href="{{ route('admin.movies_rooms.index') }}">Proiections</a>
+                                    <a class="dropdown-item" href="{{ route('admin.movie_rooms.index') }}">Proiections</a>
                                     <a class="dropdown-item" href="{{ route('admin.rooms.index') }}">Rooms</a>
                                     <a class="dropdown-item" href="{{ route('admin.slots.index') }}">Slots</a>
                                 </div>
