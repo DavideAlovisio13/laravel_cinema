@@ -172,7 +172,7 @@ a {
                         opacity: 0.5;
                     }
                     &.active {
-                        color: #ef8157;
+                        color: $active-link;
                         opacity: 1;
                         i {
                             opacity: 0.8;
