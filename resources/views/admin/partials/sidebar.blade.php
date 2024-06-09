@@ -15,17 +15,17 @@
             <div class="collapse" id="collapseExample">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('profile') }}">
+                        <a class="nav-link d-flex align-items-center" href="{{ url('profile') }}">
                             <i class="fa-solid fa-user"></i> {{ __('Profile') }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link d-flex align-items-center" href="#">
                             <i class="fa-solid fa-gear"></i> Settings
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}"
+                        <a class="nav-link d-flex align-items-center" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
