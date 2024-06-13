@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\Api\MovieController;
+use App\Http\Controllers\Api\RoomController;
+use App\Http\Controllers\Api\MovieRoomController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('movies', [MovieController::class, 'index']);
+
+Route::get('rooms', [RoomController::class, 'index']);
+
+Route::get('projections', [MovieRoomController::class, 'index']);
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
