@@ -21,4 +21,8 @@ class Movie extends Model
     public function rooms(){
         return $this->belongsToMany(Room::class);
     }
+
+    public function movie_rooms(){
+        return $this->hasMany(MovieRoom::class);
+    }
 }

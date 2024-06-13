@@ -20,4 +20,3 @@ class MovieRoomController extends Controller
         ], 200);
     }
 }
-
