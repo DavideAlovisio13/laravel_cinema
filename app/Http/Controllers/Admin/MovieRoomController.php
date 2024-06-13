@@ -11,6 +11,8 @@ use App\Models\Slot;
 use App\Http\Requests\StoreMovieRoomRequest;
 use App\Http\Requests\UpdateMovieRoomRequest;
 
+use Illuminate\Support\Carbon;
+
 class MovieRoomController extends Controller
 {
     /**
@@ -18,10 +20,19 @@ class MovieRoomController extends Controller
      */
     public function index()
     {
+        $today = Carbon::today();
+        // dd($today);
+        $nextWeek = Carbon::today()->addWeek();
+        // dd($nextWeek);
+
         $movieRoom = MovieRoom::all();
         $movies = Movie::all();
         $rooms = Room::all();
-        return view('admin.movie_rooms.index', compact('movieRoom', 'movies', 'rooms'));
+        $slots = Slot::all();
+        $weeklyMovies = MovieRoom::whereDate('date_projection', '<=', $nextWeek)->whereDate('date_projection', '>=', $today)->get();
+        
+        
+        return view('admin.movie_rooms.index', compact('movieRoom', 'movies', 'rooms', 'slots', 'weeklyMovies'));
     }
 
     /**

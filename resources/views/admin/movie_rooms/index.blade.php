@@ -46,6 +46,12 @@
         </div>
     </div>
 
+    <div class="d-flex justify-content-center">
+        @foreach ($weeklyMovies as $projection)
+        {{ ($projection->movie->title) }}
+        @endforeach
+    </div>
+
 </section>
 <a href="{{ route('admin.movie_rooms.create') }}" class="btn btn-danger">Create a new projection</a>
 
