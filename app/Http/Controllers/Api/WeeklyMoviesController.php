@@ -15,11 +15,12 @@ class WeeklyMoviesController extends Controller
         // dd($today);
         $nextWeek = Carbon::today()->addWeek();
         // dd($nextWeek);
+
         $weeklyMovies = MovieRoom::whereDate('date_projection', '<=', $nextWeek)->whereDate('date_projection', '>=', $today)->get();
         return response()->json([
             'status' => 'success',
             'message' => 'ok',
-            'data' => $weeklyMovies
+            'data' => $weeklyMovies,
         ], 200);
     }
 }

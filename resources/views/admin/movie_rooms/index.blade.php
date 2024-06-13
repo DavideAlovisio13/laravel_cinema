@@ -48,7 +48,11 @@
 
     <div class="d-flex justify-content-center">
         @foreach ($weeklyMovies as $projection)
-        {{ ($projection->movie->title) }}
+        <ul>
+            <li>{{ $projection->movie->title }}</li>
+            <li>{{ $projection->date_projection }}</li>
+        </ul>
+
         @endforeach
     </div>
 
