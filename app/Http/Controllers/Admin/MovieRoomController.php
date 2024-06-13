@@ -30,6 +30,8 @@ class MovieRoomController extends Controller
         $rooms = Room::all();
         $slots = Slot::all();
         $weeklyMovies = MovieRoom::whereDate('date_projection', '<=', $nextWeek)->whereDate('date_projection', '>=', $today)->get();
+
+        // dd($weeklyMovies);
         
         
         return view('admin.movie_rooms.index', compact('movieRoom', 'movies', 'rooms', 'slots', 'weeklyMovies'));
