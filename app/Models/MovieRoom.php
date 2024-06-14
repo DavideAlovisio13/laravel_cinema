@@ -22,4 +22,6 @@ class MovieRoom extends Model
     public function slot() {
         return $this->belongsTo(Slot::class);
     }
+
+    
 }
