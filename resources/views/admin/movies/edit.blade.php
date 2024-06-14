@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-@section('title', 'Edit '. $movie->title)
+@section('title', 'Edit ' . $movie->title)
 @section('content')
 
 <section>
-    <h2 class="text-center tet-uppercase">inserisci un nuovo film</h2>
-    <form class="row g-3" action="{{route('admin.movies.update' , $movie)}}" method="POST">
+    <h2 class="text-center text-uppercase">Modifica {{$movie->title}} </h2>
+    <form class="row g-3" action="{{route('admin.movies.update', $movie)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="col-md-6">
@@ -27,7 +27,7 @@
         <div class="col-12">
             <label for="minutes" class="form-label">minutes</label>
             <input type="text" class="form-control @error('minutes') is-invalid @enderror" id="minutes" name="minutes"
-                value="{{old('minutes' , $movie->minutes)}}" required>
+                value="{{old('minutes', $movie->minutes)}}" required>
 
         </div>
         @error('minutes')
@@ -35,8 +35,8 @@
         @enderror
         <div class="col-12">
             <label for="language" class="form-label">language</label>
-            <input type="text" class="form-control @error('language') is-invalid @enderror" id="language" name="language"
-                value="{{old('language', $movie->language)}}" required>
+            <input type="text" class="form-control @error('language') is-invalid @enderror" id="language"
+                name="language" value="{{old('language', $movie->language)}}" required>
 
         </div>
         @error('language')
@@ -64,7 +64,6 @@
             <label for="release_date" class="form-label">release date</label>
             <input type="date" class="form-control @error('release_date') is-invalid @enderror" id="release_date"
                 name="release_date" value="{{old('release_date', $movie->release_date)}}" required>
-
         </div>
         @error('release_date')
             <div class="alert alert-danger">{{$message}}</div>

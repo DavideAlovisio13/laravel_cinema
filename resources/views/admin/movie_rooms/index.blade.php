@@ -11,6 +11,8 @@
                         <th scope="col" class="text-danger bg-transparent">Id</th>
                         <th scope="col" class="text-danger bg-transparent">Movie title</th>
                         <th scope="col" class="text-danger bg-transparent">Room</th>
+                        <th scope="col" class="text-danger bg-transparent">Date</th>
+                        <th scope="col" class="text-danger bg-transparent">Start time</th>
                         <th scope="col" class="text-danger bg-transparent">Ticket Price</th>
                         <th scope="col" class="text-danger bg-transparent">Seats</th>
                         <th scope="col" class="text-danger bg-transparent">Actions</th>
@@ -22,6 +24,8 @@
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->id }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->movie->title }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->room->name }}</td>
+                            <td class="bg-transparent text-black border-bottom-0">{{ $projection->date_projection }}</td>
+                            <td class="bg-transparent text-black border-bottom-0">{{ $projection->slot->start_time }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->ticket_price }}</td>
                             <td class="bg-transparent text-black border-bottom-0">{{ $projection->room->seats }}</td>
                             <td class=" bg-transparent text-black d-flex border-bottom-0 flex-column justify-content-center align-items-center">
