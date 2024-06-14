@@ -6,7 +6,7 @@
 
 <section class="container d-flex">
     <div class="d-flex justify-content-center ">
-        <img src="{{$movie->thumb}}" alt="{{ $movie->title }}" class="w-50" >
+        <img src="{{$movie->thumb}}" alt="{{ $movie->title }}" class="w-50">
     </div>
     <div class="container d-flex flex-column justify-content-between">
         <p>{{$movie->description}}</p>
@@ -27,6 +27,11 @@
             </ul>
         </div>
         <div class="d-flex"></div>
+        <div>
+            @foreach ($reviews as $index => $review)
+            @include('admin.partials.review-card')
+            @endforeach
+        </div>
 
     </div>
 

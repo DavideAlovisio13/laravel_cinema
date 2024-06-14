@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\SlotController;
+use App\Http\Controllers\Admin\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,11 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('movies',MovieController::class)->parameters(['movies' => 'movie:slug']);
     Route::resource('slots',SlotController::class)->parameters(['slots' => 'slot:id'])->except('show');
     Route::resource('movie_rooms', MovieRoomController::class)->parameters(['movieRoom' => 'movie_rooms:id']);
+    Route::resource('reviews', ReviewController::class)->parameters(['reviews' => 'review:id', 'movie' => 'movie:id'])->except('index', 'create');
+    Route::get('movies/{movie}/reviews/create', [MovieController::class, 'createReview'])->name('movies.reviews.create');
+    // Route::post('reviews/{movie}/store', [ReviewController::class, 'store'])->parameters(['movie' => 'movie:id']);
+
+   
 });
 
 // group: raggruppa tutte le rotte che posso avere qualcosa in comune

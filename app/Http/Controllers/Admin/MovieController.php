@@ -46,9 +46,8 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-
-         
-        return view('admin.movies.show', compact('movie'));
+        $reviews = $movie->reviews;         
+        return view('admin.movies.show', compact('movie', 'reviews'));
 
     }
 
@@ -77,5 +76,10 @@ class MovieController extends Controller
     {
         $movie->delete();
         return redirect()->route('admin.movies.index')->with('message', $movie->title . 'eliminato con successo');
+    }
+
+    public function createReview (Movie $movie) {
+
+        return view('admin.reviews.create', compact('movie'));
     }
 }

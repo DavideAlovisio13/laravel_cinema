@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\review;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
+use App\Models\Movie;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -12,15 +13,18 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+
+        return view('admin.reviews.index', compact('reviews'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($movieId)
     {
-        //
+        $movie = Movie::findorfail($movieId);
+        return view('admin.reviews.create', compact('movie'));
     }
 
     /**
@@ -28,13 +32,25 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        
+        $form_data = $request->validate([
+            'author' => 'required|max:100',
+            'comment' => 'required|max:1000',
+            'movie_id' => 'required'
+        ]);
+        // dd('ciao');
+        $new_review = new Review();
+        $new_review->fill($form_data);
+        $new_review->save();
+        dd($new_review);
+        return view('admin.movies.show');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(review $review)
+    public function show(Review $review)
     {
         //
     }
@@ -42,15 +58,15 @@ class ReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(review $review)
+    public function edit(Review $review)
     {
-        //
+        return view('admin.reviews.edit', compact('review'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, review $review)
+    public function update(Request $request, Review $review)
     {
         //
     }
@@ -58,7 +74,7 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(review $review)
+    public function destroy(Review $review)
     {
         //
     }
