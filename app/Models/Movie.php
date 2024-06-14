@@ -25,4 +25,8 @@ class Movie extends Model
     public function movie_rooms(){
         return $this->hasMany(MovieRoom::class);
     }
+
+    public function reviews() {
+        return $this->hasMany(review::class);
+    }
 }
