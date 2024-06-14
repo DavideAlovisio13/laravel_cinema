@@ -15,13 +15,13 @@ class MovieController extends Controller
         $movies = Movie::with([
             'movie_rooms' => function ($query) {
                 $query->whereNotNull('date_projection')
-                    ->whereBetween('date_projection', [Carbon::now(), Carbon::now()->addDays(7)]);
+                    ->whereBetween('date_projection', [Carbon::today(), Carbon::today()->addDays(7)]);
             },
             'movie_rooms.room',
             'movie_rooms.slot'
         ])->whereHas('movie_rooms', function ($query) {
             $query->whereNotNull('date_projection')
-                ->whereBetween('date_projection', [Carbon::now(), Carbon::now()->addDays(7)]);
+                ->whereBetween('date_projection', [Carbon::today(), Carbon::today()->addDays(7)]);
         })->get();
 
 
