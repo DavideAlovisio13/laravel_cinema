@@ -12,11 +12,18 @@ class MovieController extends Controller
 {
     public function index()
     {
-        $movies = Movie::with('movie_rooms','rooms','slots')->whereHas('movie_rooms', function ($query) {
+        $movies = Movie::with([
+            'movie_rooms' => function ($query) {
+                $query->whereNotNull('date_projection')
+                    ->whereBetween('date_projection', [Carbon::now(), Carbon::now()->addDays(7)]);
+            },
+            'movie_rooms.room',
+            'movie_rooms.slot'
+        ])->whereHas('movie_rooms', function ($query) {
             $query->whereNotNull('date_projection')
-                  ->whereBetween('date_projection', [Carbon::now(), Carbon::now()->addDays(7)]);
+                ->whereBetween('date_projection', [Carbon::now(), Carbon::now()->addDays(7)]);
         })->get();
-        
+
 
         return response()->json([
             'status' => 'success',
