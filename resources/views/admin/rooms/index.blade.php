@@ -2,6 +2,10 @@
 @section('title', 'Rooms')
 @section('content')
 
+<div class="d-flex justify-content-between align-items-center mt-3">
+    <h2>Sale</h2>
+    <a href="{{ route('admin.movies.create') }}" class="btn btn-danger w-25">Inserisci nuova sala</a>
+</div>
 <div class="card my-5">
     <div class="card-body">
         <table class="table">
@@ -46,7 +50,7 @@
             </tbody>
         </table>
     </div>
-    <a href="{{ route('admin.rooms.create') }}" class="btn btn-danger">Create a new post</a>
+    
 </div>
 @include('admin.partials.modal-delete')
 
@@ -56,7 +60,7 @@
 </a>
 <ul>
     @foreach ($rooms as $room)
-        <li><a href="{{route('admin.rooms.show', $room->id)}}">Nome:{{$room->name }}</a> prezzo:{{$room->base_price}}</li>
+    <li><a href="{{route('admin.rooms.show', $room->id)}}">Nome:{{$room->name }}</a> prezzo:{{$room->base_price}}</li>
     @endforeach
 
 </ul> --}}

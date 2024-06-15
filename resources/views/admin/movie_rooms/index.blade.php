@@ -2,7 +2,10 @@
 @section('title', 'Projections')
 @section('content')
 <section class="container-fluid">
-    <h2>Projection</h2>
+<div class="d-flex justify-content-between align-items-center mt-3">
+        <h2>Proiezioni</h2>
+        <a href="{{ route('admin.movies.create') }}" class="btn btn-danger w-25">Inserisci nuova proiezione</a>
+    </div>
     <div class="card my-5">
         <div class="card-body">
             <table class="table">
@@ -51,9 +54,8 @@
     </div>
 
 </section>
-<a href="{{ route('admin.movie_rooms.create') }}" class="btn btn-danger">Create a new projection</a>
 
-</div>
+
 @include('admin.partials.modal-delete')
 
 @endsection

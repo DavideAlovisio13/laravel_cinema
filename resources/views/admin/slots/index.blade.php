@@ -43,7 +43,9 @@
             </tbody>
         </table>
     </div>
-    <a href="{{ route('admin.slots.create') }}" class="btn btn-danger">Create a new post</a>
+    <div class="text-center mb-3">
+        <a href="{{ route('admin.slots.create') }}" class="btn btn-danger w-25 ">Crea nuovo slot di proizione</a>
+    </div>
 </div>
 @include('admin.partials.modal-delete')
 

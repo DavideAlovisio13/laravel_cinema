@@ -2,7 +2,10 @@
 @section('title', 'Movies')
 @section('content')
 <section class="container-fluid">
-    <h2>Movies</h2>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <h2>Movies</h2>
+        <a href="{{ route('admin.movies.create') }}" class="btn btn-danger w-25">Inserisci nuovo film</a>
+    </div>
     <div class="card my-5">
         <div class="card-body">
             <table class="table">
@@ -44,7 +47,6 @@
                 </tbody>
             </table>
         </div>
-        <a href="{{ route('admin.movies.create') }}" class="btn btn-danger">Create a new post</a>
     </div>
 </section>
 @include('admin.partials.modal-delete')
