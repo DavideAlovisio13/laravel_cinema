@@ -5,7 +5,18 @@
     <li>
         <p>Testo recensione: {{ $reviews[$index]->comment}}</p>
     </li>
-
-    <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="btn btn-danger">Create a new post</a>
+    <li>
+        <p>Voto recensione: {{ $reviews[$index]->rating}}</p>
+    </li>
     <!-- a href="{{ route('admin.reviews.edit', $reviews[$index]->id) }}" class="btn btn-primary">Modifica</a> -->
 </ul>
+<a href="{{ route('admin.reviews.edit', $reviews[$index],) }}" ><i class="fa-solid text-danger fa-pen"></i></a>
+<form action="{{ route('admin.reviews.destroy', $reviews[$index]->id) }}" method="POST" class="text-end">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="delete-button border-0 bg-transparent"
+        data-item-title="{{ $reviews[$index]->author }}">
+        <i class="fa-solid text-danger fa-trash"></i>
+    </button>
+</form>
+@include('admin.partials.modal-delete')

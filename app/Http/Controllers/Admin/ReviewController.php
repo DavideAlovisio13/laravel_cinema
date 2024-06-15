@@ -32,19 +32,19 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         
         $form_data = $request->validate([
             'author' => 'required|max:100',
             'comment' => 'required|max:1000',
+            'rating' => 'nullable|numeric|min:1|max:10',
             'movie_id' => 'required'
         ]);
-        // dd('ciao');
+        
         $new_review = new Review();
         $new_review->fill($form_data);
         $new_review->save();
-        dd($new_review);
-        return view('admin.movies.show');
+        $movies = Movie::all();
+        return view('admin.movies.index' , compact('movies'));
     }
 
     /**
@@ -68,7 +68,15 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $form_data = $request->validate([
+            'author' => 'required|max:100',
+            'comment' => 'required|max:1000',
+            'rating' => 'nullable|numeric|min:1|max:10',
+        ]);
+
+        $review->update($form_data);
+        $movies = Movie::all();
+        return view('admin.movies.index' , compact('movies'));
     }
 
     /**
@@ -76,6 +84,8 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        $movies = Movie::all();
+        return view('admin.movies.index' , compact('movies'));
     }
 }

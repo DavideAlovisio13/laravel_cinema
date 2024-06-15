@@ -32,6 +32,12 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('movie_rooms', MovieRoomController::class)->parameters(['movieRoom' => 'movie_rooms:id']);
     Route::resource('reviews', ReviewController::class)->parameters(['reviews' => 'review:id', 'movie' => 'movie:id'])->except('index', 'create');
     Route::get('movies/{movie}/reviews/create', [MovieController::class, 'createReview'])->name('movies.reviews.create');
+    //Route::resource('movies.reviews', ReviewController::class)->parameters(['reviews' => 'review:id', 'movie' => 'movie:id'])->except('index', 'create');
+    Route::resource('movies.reviews', ReviewController::class)
+    ->parameters([
+        'movies' => 'movie:id',
+        'reviews' => 'review:id'
+    ]);
     // Route::post('reviews/{movie}/store', [ReviewController::class, 'store'])->parameters(['movie' => 'movie:id']);
 
    
