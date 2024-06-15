@@ -7,7 +7,7 @@
     <form class="row g-3" action="{{ route('admin.movie_rooms.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="movie_id">Movie</label>
-        <select name="movie_id" id="movie_id" class="form-label ">
+        <select name="movie_id" id="movie_id" class="form-control">
             <option value="">select type</option>
             @foreach ($movies as $movie)
                 <option value="{{ $movie->id }}" {{ $movie->id == old('movies_id') ? 'selected' : '' }}>
@@ -16,7 +16,7 @@
             @endforeach
         </select>
         <label for="room_id">Room</label>
-        <select name="room_id" id="room_id" class="form-label ">
+        <select name="room_id" id="room_id" class="form-control ">
             <option value="">select type</option>
             @foreach ($rooms as $room)
                 <option value="{{ $room->id }}" {{ $room->id == old('rooms_id') ? 'selected' : '' }}>
@@ -25,7 +25,7 @@
             @endforeach
         </select>
         <label for="slot_id">Slot</label>
-        <select name="slot_id" id="slot_id" class="form-label ">
+        <select name="slot_id" id="slot_id" class="form-control ">
             <option value="">select type</option>
             @foreach ($slots as $slot)
                 <option value="{{ $slot->id }}" {{ $slot->id == old('slots_id') ? 'selected' : '' }}>
@@ -34,7 +34,7 @@
             @endforeach
         </select>
         <div class="d-flex justify-content-between">
-            <div class="p-0 w-50">
+            <div class="p-0 w-75">
                 <label for="date_projection">Date Projection</label>
                 <input type="date" name="date_projection" class="form-control w-25" id="date_projection" value="{{ old('date_projection') }}">
             </div>

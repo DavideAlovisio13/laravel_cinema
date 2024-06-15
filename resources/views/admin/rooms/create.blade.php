@@ -14,7 +14,7 @@
             @error('name')
             <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="nameHelp" class="form-text text-white">Inserire minimo 3 caratteri</div>
+            <!-- <div id="nameHelp" class="form-text text-dark">Inserire minimo 3 caratteri</div> -->
         </div>
         
         <div class="mb-3">
@@ -24,7 +24,7 @@
             @error('alias')
             <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="aliasHelp" class="form-text text-white">Inserire minimo 3 caratteri</div>
+            <!-- <div id="aliasHelp" class="form-text text-dark">Inserire minimo 3 caratteri</div> -->
         </div>
         
         <div class="mb-3">
@@ -34,7 +34,7 @@
             @error('seats')
             <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="seatsHelp" class="form-text text-white">Inserire minimo 3 caratteri</div>
+            <!-- <div id="seatsHelp" class="form-text text-dark">Inserire minimo 3 caratteri</div> -->
         </div>
         
         <label for="isense" class="form-label">Isense</label>
@@ -51,7 +51,7 @@
             @error('base_price')
             <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="base_priceHelp" class="form-text text-white">Inserire un numero decimale</div>
+            <div id="base_priceHelp" class="form-text text-dark">Inserire un numero decimale</div>
         </div>
         
         <div class="mb-3">

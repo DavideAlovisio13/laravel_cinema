@@ -406,3 +406,9 @@ a {
         --position: 5;
     }
 }
+
+.description-truncate {
+max-height: 150px;
+overflow-y: auto;
+
+}

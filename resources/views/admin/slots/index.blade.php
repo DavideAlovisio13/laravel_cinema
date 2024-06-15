@@ -18,10 +18,10 @@
             <tbody class="table-group-divider ">
                 @foreach ($slots as $slot)
                     <tr>
-                        <td class="bg-transparent text-black border-bottom-0">{{ $slot->id }}</td>
-                        <td class="bg-transparent text-black border-bottom-0">{{ $slot->time_slot }}</td>
-                        <td class="bg-transparent text-black border-bottom-0">{{ $slot->start_time }}</td>
-                        <td class="bg-transparent text-black border-bottom-0">{{ $slot->end_time }}</td>
+                        <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $slot->id }}</td>
+                        <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $slot->time_slot }}</td>
+                        <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $slot->start_time }}</td>
+                        <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $slot->end_time }}</td>
                         </td>
                         <td
                             class=" bg-transparent text-black d-flex border-bottom-0 flex-column justify-content-center align-items-center">
