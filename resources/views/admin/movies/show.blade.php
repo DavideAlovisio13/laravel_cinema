@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title',$movie->title)
+@section('title', $movie->title)
 @section('content')
 <h1 class="text-center">{{$movie->title}}</h1>
 
 
 <section class="container d-flex">
-    <div class="d-flex justify-content-center ">
-        <img src="{{$movie->thumb}}" alt="{{ $movie->title }}" class="w-50" >
+    <div>
+        <img src="{{$movie->thumb}}" alt="{{ $movie->title }}" class="w-100">
     </div>
     <div class="container d-flex flex-column justify-content-between">
         <p>{{$movie->description}}</p>
@@ -26,7 +26,14 @@
                 </li>
             </ul>
         </div>
-        <div class="d-flex"></div>
+
+        <div>
+            <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="btn btn-danger">Crea recensione</a>
+
+            @foreach ($reviews as $index => $review)
+                @include('admin.partials.review-card')
+            @endforeach
+        </div>
 
     </div>
 
