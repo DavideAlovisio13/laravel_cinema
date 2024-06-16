@@ -18,7 +18,8 @@ class MovieController extends Controller
                     ->whereBetween('date_projection', [Carbon::today(), Carbon::today()->addDays(7)]);
             },
             'movie_rooms.room',
-            'movie_rooms.slot'
+            'movie_rooms.slot',
+            'reviews',
         ])->whereHas('movie_rooms', function ($query) {
             $query->whereNotNull('date_projection')
                 ->whereBetween('date_projection', [Carbon::today(), Carbon::today()->addDays(7)]);
