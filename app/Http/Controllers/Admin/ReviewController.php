@@ -72,6 +72,7 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
+        $movie = $review->movie;
         $form_data = $request->validate([
             'author' => 'required|max:100',
             'comment' => 'required|max:1000',
@@ -79,8 +80,8 @@ class ReviewController extends Controller
         ]);
 
         $review->update($form_data);
-        $movie = Movie::findorfail($form_data['movie_id']);
         $reviews=$movie->reviews;
+        
         return view('admin.movies.show' , compact('movie', 'reviews'));
     }
 
