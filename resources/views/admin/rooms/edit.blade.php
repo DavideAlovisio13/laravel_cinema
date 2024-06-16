@@ -63,8 +63,8 @@
 
     <div class="pb-5">
 
-        <button type="submit" class="btn btn-primary ">Modifica</button>
-        <button type="reset" class="btn btn-secondary ">Svuota campi</button>
+        <button type="submit" class="btn bg-bordeaux ">Modifica</button>
+        <button type="reset" class="btn bg-bordeaux ">Svuota campi</button>
     </div>
 </form>
 @endsection

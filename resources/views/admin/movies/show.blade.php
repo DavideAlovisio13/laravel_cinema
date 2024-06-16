@@ -30,7 +30,7 @@
         <div>
             <div class="d-flex justify-content-between my-3">
                 <h4 class="">Recensioni</h4>
-                <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="btn btn-danger">Crea recensione</a>
+                <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="btn bg-bordeaux">Crea recensione</a>
             </div>
 
             @foreach ($reviews as $index => $review)

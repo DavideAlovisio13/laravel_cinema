@@ -71,8 +71,8 @@
         @enderror
         
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">modifica</button>
-            <button type="reset" class="btn btn-primary">reset</button>
+            <button type="submit" class="btn bg-bordeaux">modifica</button>
+            <button type="reset" class="btn bg-bordeaux">reset</button>
         </div>
     </form>
 </section>

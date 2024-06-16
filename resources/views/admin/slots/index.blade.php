@@ -7,11 +7,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class="text-danger bg-transparent">Id</th>
-                    <th scope="col" class="text-danger bg-transparent">Name</th>
-                    <th scope="col" class="text-danger bg-transparent">Start</th>
-                    <th scope="col" class="text-danger bg-transparent">End</th>
-                    <th scope="col" class="text-danger bg-transparent">Action</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Id</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Name</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Start</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">End</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Action</th>
 
                 </tr>
             </thead>
@@ -25,16 +25,16 @@
                         </td>
                         <td
                             class=" bg-transparent text-black d-flex border-bottom-0 flex-column justify-content-center align-items-center">
-                           
+
                             <a href="{{ route('admin.slots.edit', $slot->id) }}"><i
-                                    class="fa-solid text-danger fa-pen"></i></a>
+                                    class="fa-solid text-bordeaux fa-pen"></i></a>
                             <form action="{{ route('admin.slots.destroy', $slot->id) }}" method="POST"
                                 class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="delete-button border-0 bg-transparent"
                                     data-item-title="{{ $slot->time_slot }}">
-                                    <i class="fa-solid text-danger fa-trash"></i>
+                                    <i class="fa-solid text-bordeaux fa-trash"></i>
                                 </button>
                             </form>
                         </td>
@@ -43,9 +43,9 @@
             </tbody>
         </table>
     </div>
-    <div class="text-center mb-3">
-        <a href="{{ route('admin.slots.create') }}" class="btn btn-danger w-25 ">Crea nuovo slot di proizione</a>
-    </div>
+</div>
+<div class="text-center mb-3">
+    <a href="{{ route('admin.slots.create') }}" class="btn bg-bordeaux w-25 ">Crea nuovo slot di proizione</a>
 </div>
 @include('admin.partials.modal-delete')
 
@@ -55,7 +55,7 @@
 </a>
 <ul>
     @foreach ($rooms as $room)
-        <li><a href="{{route('admin.rooms.show', $room->id)}}">Nome:{{$room->name }}</a> prezzo:{{$room->base_price}}</li>
+    <li><a href="{{route('admin.rooms.show', $room->id)}}">Nome:{{$room->name }}</a> prezzo:{{$room->base_price}}</li>
     @endforeach
 
 </ul> --}}

@@ -35,7 +35,7 @@
             </tbody>
         </table>
     </div>
-    <a href="{{ route('admin.rooms.index') }}" class="btn btn-primary">torna alle sale</a>
+    <a href="{{ route('admin.rooms.index') }}" class="btn bg-bordeaux">torna alle sale</a>
 </div>
 
 @endsection
