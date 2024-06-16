@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('rooms',RoomController::class)->parameters(['rooms' => 'room:id']);
     Route::resource('movies',MovieController::class)->parameters(['movies' => 'movie:slug']);
     Route::resource('slots',SlotController::class)->parameters(['slots' => 'slot:id'])->except('show');
-    Route::resource('movie_rooms', MovieRoomController::class)->parameters(['movieRoom' => 'movie_rooms:id']);
+    Route::resource('movie_rooms', MovieRoomController::class)->parameters(['movieRoom' => 'movie_rooms:id'])->except('show');
     Route::resource('reviews', ReviewController::class)->parameters(['reviews' => 'review:id', 'movie' => 'movie:id'])->except('index', 'create');
     Route::get('movies/{movie}/reviews/create', [MovieController::class, 'createReview'])->name('movies.reviews.create');
 });

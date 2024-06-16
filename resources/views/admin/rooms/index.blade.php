@@ -4,20 +4,20 @@
 
 <div class="d-flex justify-content-between align-items-center mt-3">
     <h2>Sale</h2>
-    <a href="{{ route('admin.rooms.create') }}" class="btn btn-danger w-25">Inserisci nuova sala</a>
+    <a href="{{ route('admin.rooms.create') }}" class="btn bg-bordeaux w-25">Inserisci nuova sala</a>
 </div>
 <div class="card my-5">
     <div class="card-body">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class="text-danger bg-transparent">Id</th>
-                    <th scope="col" class="text-danger bg-transparent">Nome</th>
-                    <th scope="col" class="text-danger bg-transparent">Sala</th>
-                    <th scope="col" class="text-danger bg-transparent">Colore</th>
-                    <th scope="col" class="text-danger bg-transparent">Posti a sedere</th>
-                    <th scope="col" class="text-danger bg-transparent">Isense</th>
-                    <th scope="col" class="text-danger bg-transparent">Azioni</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Id</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Nome</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Sala</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Colore</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Posti a sedere</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Isense</th>
+                    <th scope="col" class="text-bordeaux bg-transparent">Azioni</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider ">
@@ -36,16 +36,16 @@
                         <td
                             class=" bg-transparent text-black d-flex border-bottom-0 flex-column justify-content-center align-items-center">
                             <a href="{{ route('admin.rooms.show', $room->id) }}" class="mt-3"><i
-                                    class="fa-solid text-danger fa-eye"></i></a>
+                                    class="fa-solid text-bordeaux fa-eye"></i></a>
                             <a href="{{ route('admin.rooms.edit', $room->id) }}" class="mt-3"><i
-                                    class="fa-solid text-danger fa-pen"></i></a>
+                                    class="fa-solid text-bordeaux fa-pen"></i></a>
                             <form action="{{ route('admin.rooms.destroy', $room->id) }}" class="mt-3" method="POST"
                                 class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="delete-button border-0 bg-transparent"
                                     data-item-title="{{ $room->name }}">
-                                    <i class="fa-solid text-danger fa-trash"></i>
+                                    <i class="fa-solid text-bordeaux fa-trash"></i>
                                 </button>
                             </form>
                         </td>

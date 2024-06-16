@@ -69,7 +69,7 @@
             <div class="alert alert-danger">{{$message}}</div>
         @enderror
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">crea</button>
+            <button type="submit" class="btn bg-bordeaux">crea</button>
         </div>
     </form>
 </section>

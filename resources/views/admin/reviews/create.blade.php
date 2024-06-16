@@ -41,7 +41,7 @@
         </select>
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Crea</button> 
+            <button type="submit" class="btn bg-bordeaux">Crea</button> 
         </div>
     </form>
 
