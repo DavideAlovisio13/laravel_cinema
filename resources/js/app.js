@@ -116,8 +116,8 @@ var myLineChart = new Chart(ctx, {
 });
 
 // Pie Chart 
-var ctx = document.getElementById("myPieChart");
-var myPieChart = new Chart(ctx, {
+var ctx1 = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx1, {
   type: 'doughnut',
   data: {
     labels: ["Direct", "Referral", "Social"],
