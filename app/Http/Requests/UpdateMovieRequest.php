@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateMovieRequest extends FormRequest
 {
@@ -23,12 +24,17 @@ class UpdateMovieRequest extends FormRequest
      public function rules(): array
     {
         return [
-            'name' => 'required|min:3|max:100|unique:rooms',
-            'alias' => 'max:100|nullable',
-            'seats' => 'integer',
-            'isense' => 'boolean',
-            'base_price' => 'decimal:2',
-            'img_room' => 'nullable|max:255|image'
+            'title' => [
+                'required',
+                'max:255',
+                Rule::unique('movies')->ignore($this->movie->id)
+            ],
+            'description' => 'required|string|max:1000',
+            'minutes' => 'required|integer|min:1',
+            'language' => 'required|string|max:100',
+            'thumb' => 'nullable|url|max:255',
+            'trailer' => 'nullable|url|max:255',
+            'release_date' => 'required|date'
         ];
     }
     public function messages(){

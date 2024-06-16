@@ -5,7 +5,7 @@
 <section>
     
     <h2 class="text-center text-uppercase">Inserisci una recensione del film: {{ $movie->title }}</h2>
-    <form class="row g-3" action="{{ route('admin.movies.reviews.store', $movie->id) }}" method="POST" enctype="multipart/form-data">
+    <form class="row g-3" action="{{ route('admin.reviews.store', $movie->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="col-md-6">
