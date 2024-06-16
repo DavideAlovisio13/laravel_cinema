@@ -45,6 +45,7 @@
                                         <i class="fa-solid text-danger fa-trash"></i>
                                     </button>
                                 </form>
+                                <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="mt-3"><i class="fa-regular text-danger fa-star-half-stroke"></i></a>
                             </td>
                         </tr>
                     @endforeach
