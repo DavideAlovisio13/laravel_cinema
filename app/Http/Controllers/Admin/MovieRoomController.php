@@ -19,7 +19,7 @@ class MovieRoomController extends Controller
      */
     public function index()
     {
-        $movieRoom = MovieRoom::all();
+        $movieRoom = MovieRoom::orderBy('date_projection', 'desc')->get();
         $movies = Movie::all();
         $rooms = Room::all();
         return view('admin.movie_rooms.index', compact('movieRoom', 'movies', 'rooms'));

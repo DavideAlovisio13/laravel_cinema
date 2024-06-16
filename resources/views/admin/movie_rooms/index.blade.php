@@ -33,7 +33,7 @@
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->room->name }}</td>
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->date_projection }}</td>
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->slot->start_time }}</td>
-                            <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->ticket_price }}</td>
+                            <td class="bg-transparent text-black border-bottom-0 align-middle">&euro;{{ $projection->ticket_price }}</td>
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->room->seats }}</td>
                             <td class=" bg-transparent text-black d-flex border-bottom-0 flex-column justify-content-center align-items-center">
                                 <a href="{{ route('admin.movie_rooms.edit', $projection->id) }}" class="mt-3"><i
