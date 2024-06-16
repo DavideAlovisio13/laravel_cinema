@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <label for="author" class="form-label">Autore</label>
             <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author"
-                value="{{old('author')}}">
+                value="{{old('author', $review->author)}}">
             @error('author')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
@@ -20,7 +20,7 @@
 
         <div class="col-md-6">
             <label for="comment" class="form-label">Commento</label>
-            <textarea class="form-control @error('comment') is-invalid @enderror" id="comment" name="comment">{{old('comment')}}</textarea>
+            <textarea class="form-control @error('comment') is-invalid @enderror" id="comment" name="comment">{{old('comment', $review->comment)}}</textarea>
             @error('comment')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
@@ -30,14 +30,14 @@
         <div class="col-md-6">
             <label for="rating" class="form-label">Valutazione</label>
             <input type="number" class="form-control @error('rating') is-invalid @enderror" id="rating" name="rating"
-                value="{{old('rating')}}">
+                value="{{old('rating', $review->rating)}}">
             @error('rating')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
         </div>
 
         <select name="movie_id" id="movie_id" class="form-control w-50 ms-1">
-            <option value="{{ $movie->id }}"> {{$movie->title}}</option>
+            <option value="{{old('movie_id', $movie->id) }}"> {{old('movie_id', $movie->title)}}</option>
         </select>
 
         <div class="col-12">
