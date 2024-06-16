@@ -51,7 +51,7 @@ class ReviewController extends Controller
         $new_review->save();
         $movie = Movie::findorfail($form_data['movie_id']);
         $reviews=$movie->reviews;
-        return view('admin.movies.show' , compact('movie', 'reviews'));
+        return redirect()->route('admin.movies.show', $movie->slug);
     }
 
     /**
