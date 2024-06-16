@@ -59,10 +59,12 @@ class ReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Review $review)
+    public function edit(Review $review, Movie $movie)
     {
-        
-        return view('admin.reviews.edit', compact('review'));
+        $review = Review::with('movie')->findOrFail($review->id);
+        $movie = $review->movie;
+    
+        return view('admin.reviews.edit', compact('review', 'movie'));
     }
 
     /**
