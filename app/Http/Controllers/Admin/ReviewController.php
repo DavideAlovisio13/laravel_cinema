@@ -21,11 +21,17 @@ class ReviewController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($movieId)
-    {
-        $movie = Movie::findorfail($movieId);
-        return view('admin.reviews.create', compact('movie'));
-    }
+    public function create(Movie $movie)
+{
+    // Create a new empty review instance
+    $review = new Review;
+
+    // Set the movie_id attribute of the review to the given movie's ID
+    $review->movie_id = $movie->id;
+
+    // Return the view, passing both review and movie data
+    return view('admin.reviews.create', compact('movie', 'review'));
+}
 
     /**
      * Store a newly created resource in storage.
@@ -70,9 +76,8 @@ class ReviewController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Review $review)
+    public function update(Request $request, Review $review, Movie $movie)
     {
-        $movie = $review->movie;
         $form_data = $request->validate([
             'author' => 'required|max:100',
             'comment' => 'required|max:1000',
@@ -80,8 +85,9 @@ class ReviewController extends Controller
         ]);
 
         $review->update($form_data);
+        //dd($form_data);
+        $movie = Movie::with('reviews')->findorfail($review->movie_id);
         $reviews=$movie->reviews;
-        
         return view('admin.movies.show' , compact('movie', 'reviews'));
     }
 
