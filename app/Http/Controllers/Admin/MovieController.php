@@ -66,7 +66,7 @@ class MovieController extends Controller
     {
         $data_update = $request->validated();
         $movie->update($data_update);
-        return redirect()->route('admin.movies.show', $movie->slug)->with('message', $movie->title . 'modificato con successo');
+        return redirect()->route('admin.movies.show', $movie->slug);
     }
 
     /**
