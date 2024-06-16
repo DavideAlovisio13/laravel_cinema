@@ -8,7 +8,7 @@
         @csrf
         <label for="movie_id">Movie</label>
         <select name="movie_id" id="movie_id" class="form-control">
-            <option value="">select type</option>
+            <option value="">select movie</option>
             @foreach ($movies as $movie)
                 <option value="{{ $movie->id }}" {{ $movie->id == old('movies_id') ? 'selected' : '' }}>
                     {{ $movie->title }}
@@ -17,7 +17,7 @@
         </select>
         <label for="room_id">Room</label>
         <select name="room_id" id="room_id" class="form-control ">
-            <option value="">select type</option>
+            <option value="">select room</option>
             @foreach ($rooms as $room)
                 <option value="{{ $room->id }}" {{ $room->id == old('rooms_id') ? 'selected' : '' }}>
                     {{ $room->name }}
@@ -26,7 +26,7 @@
         </select>
         <label for="slot_id">Slot</label>
         <select name="slot_id" id="slot_id" class="form-control ">
-            <option value="">select type</option>
+            <option value="">select slot</option>
             @foreach ($slots as $slot)
                 <option value="{{ $slot->id }}" {{ $slot->id == old('slots_id') ? 'selected' : '' }}>
                     {{ $slot->time_slot }}
