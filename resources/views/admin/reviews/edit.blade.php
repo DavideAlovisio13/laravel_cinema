@@ -36,7 +36,9 @@
             @enderror
         </div>
 
-    
+        <select name="movie_id" id="movie_id" class="form-control w-50 ms-1">
+            <option value="{{ $movie->id }}"> {{$movie->title}}</option>
+        </select>
 
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Modifica</button> 
