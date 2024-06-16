@@ -44,7 +44,7 @@ class ReviewController extends Controller
         $new_review->fill($form_data);
         $new_review->save();
         $movie = Movie::findorfail($form_data['movie_id']);
-        $reviews = Review::all();
+        $reviews=$movie->reviews;
         return view('admin.movies.show' , compact('movie', 'reviews'));
     }
 
@@ -80,7 +80,7 @@ class ReviewController extends Controller
 
         $review->update($form_data);
         $movie = Movie::findorfail($form_data['movie_id']);
-        $reviews = Review::all();
+        $reviews=$movie->reviews;
         return view('admin.movies.show' , compact('movie', 'reviews'));
     }
 
@@ -89,8 +89,12 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
+        $movie_id = $review->movie_id;
+        $movie = Movie::findorfail($movie_id);
+        $movie_slug = $movie->slug;
+        //$reviews=$movie->reviews;
         $review->delete();
-        $movies = Movie::all();
-        return view('admin.movies.index' , compact('movies'));
+        
+        return redirect()->route('admin.movies.show', $movie->slug);
     }
 }
