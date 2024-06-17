@@ -39,7 +39,6 @@ class RoomController extends Controller
             $form_data['img_room'] = $path;
         }
 
-
         $room = Room::create($form_data);
         return redirect()->route('admin.rooms.show', $room->id)->with('message', 'La sala' . $form_data['name'] . ' è stata creata');
 
