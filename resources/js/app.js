@@ -40,16 +40,31 @@ if (checkSlot) {
       .then((response) => {
         //console.log(response.data);
       
-        const busySlots = response.data.results;
-        console.log(busySlots);
-        const allSlotOptions = document.querySelectorAll('.slotOption');
-        busySlots.forEach((slot) => {
-          allSlotOptions.forEach((option) => {
-            if (option.value === slot.id) {
-              option.setAttribute('disabled');
-          }
+        const availablesSlots = response.data.results;
+        console.log(availablesSlots);
+        //dobbiamo ciclare sulla array delle proiezioni e se slot_id = option.value allora aggiungiamo l'attributo disabled all'opzione
+        const mySelect = document.getElementById('slot_id');
+        
+        availablesSlots.forEach(slot => {
+          console.log(slot.time_slot);
+          mySelect.innerHTML += `
+                <option class="slotOption" value="${ slot.id }">
+                    ${slot.time_slot}
+                </option>
+            `;
         });
-        });
+        
+       
+      //   busySlots.forEach((slot) => {
+
+
+      //   //   allSlotOptions.forEach((option) => {
+      //   //     console.log(option.value);
+      //   //     if (option.value === slot.id) {
+      //   //       option.setAttribute('disabled');
+      //   //   }
+      //   // });
+      //   });
       })
       .catch((error) => {
         //console.error('Error fetching slots:', error);

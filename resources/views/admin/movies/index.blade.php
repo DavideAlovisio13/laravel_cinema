@@ -29,7 +29,7 @@
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $movie->id }}</td>
                             <td class="bg-transparent text-black border-bottom-0 ">
                             <a href="{{ route('admin.movies.show', $movie->slug) }}" class="">    
-                            <img src="{{ $movie->thumb }}" alt="{{ $movie->title }}" class="w-100">
+                            <img src="{{ $movie->thumb? $movie->thumb : '/images/no-image.jpeg' }}" alt="{{ $movie->title }}" class="w-100">
                             </a>    
                         </td>
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $movie->title }}</td>

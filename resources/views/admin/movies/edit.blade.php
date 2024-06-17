@@ -72,7 +72,7 @@
         
         <div class="col-12">
             <button type="submit" class="btn bg-bordeaux">modifica</button>
-            <button type="reset" class="btn bg-bordeaux">reset</button>
+            <button type="reset" class="btn bg-bordeaux">annulla modifica</button>
         </div>
     </form>
 </section>

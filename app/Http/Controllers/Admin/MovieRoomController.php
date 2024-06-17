@@ -42,6 +42,10 @@ class MovieRoomController extends Controller
     public function store(StoreMovieRoomRequest $request)
     {
         $form_data = $request->validated();
+        $ceck = MovieRoom::where('slot_id', $form_data['slot_id'])->where('date_projection', $form_data['date_projection'])->where('room_id', $form_data['room_id'])->first();
+        // if($ceck){
+        //     return redirect()->route('admin.movie_rooms.create')->with('message', 'Nella stanza'. $form_data['room_id'] .'  per la proiezione del'. $form_data['date_projection']. 'è già programmato' . $ceck->movie->title . ' nello slot ' . $ceck->slot->time_slot);
+        // }
         $newMovieRoom = new MovieRoom();
         $room = Room::findOrFail($form_data['room_id']);
         if($room->isense == 1 ){

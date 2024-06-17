@@ -3,6 +3,7 @@
 @section('content')
 
 <section>
+    @
     <h2 class="text-center tet-uppercase">Create a new projection</h2>
     <form class="row g-3" action="{{ route('admin.movie_rooms.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -20,17 +21,17 @@
                 <option value="{{ $room->id }}" {{ $room->id == old('rooms_id') ? 'selected' : '' }}>
                     {{ $room->name }}
                 </option>
-            @endforeach
+            @endforeach 
         </select>
 
         <label for="slot_id">Slot</label>
         <select name="slot_id" id="slot_id" class="form-control ">
             <option value="">select slot</option>
-            @foreach ($slots as $slot)
+            <!-- @foreach ($slots as $slot)
                 <option class="slotOption" value="{{ $slot->id }}" {{ $slot->id == old('slots_id') ? 'selected' : '' }}>
                     {{ $slot->time_slot }}
                 </option>
-            @endforeach
+            @endforeach -->
         </select>
 
        
