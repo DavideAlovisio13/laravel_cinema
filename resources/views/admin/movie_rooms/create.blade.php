@@ -9,12 +9,12 @@
         <div class="d-flex justify-content-between">
             <div class="p-0 w-75">
                 <label for="date_projection">Date Projection</label>
-                <input type="date" name="date_projection" class="form-control w-25" id="date_projection" value="{{ old('date_projection') }}">
+                <input type="date" name="date_projection" class="form-control w-25" id="projectdate" value="{{ old('date_projection') }}">
             </div>
         </div>
 
         <label for="room_id">Room</label>
-        <select name="room_id" id="room_id" class="form-control ">
+        <select name="room_id" id="checkSlot" class="form-control" >
             <option value="">select room</option>
             @foreach ($rooms as $room)
                 <option value="{{ $room->id }}" {{ $room->id == old('rooms_id') ? 'selected' : '' }}>
@@ -27,7 +27,7 @@
         <select name="slot_id" id="slot_id" class="form-control ">
             <option value="">select slot</option>
             @foreach ($slots as $slot)
-                <option value="{{ $slot->id }}" {{ $slot->id == old('slots_id') ? 'selected' : '' }}>
+                <option class="slotOption" value="{{ $slot->id }}" {{ $slot->id == old('slots_id') ? 'selected' : '' }}>
                     {{ $slot->time_slot }}
                 </option>
             @endforeach
