@@ -37,7 +37,7 @@ class MovieController extends Controller
         $data_store = $request->validated();
         $data_store['slug'] = Movie::generateSlug($data_store['title']);
         $new_movie = Movie::create($data_store);
-        return redirect()->route('admin.movies.show', $new_movie->slug);
+        return redirect()->route('admin.movies.show', $new_movie->slug)->with('message', $new_movie->title . 'creato con successo');
         
     }
     
@@ -66,7 +66,7 @@ class MovieController extends Controller
     {
         $data_update = $request->validated();
         $movie->update($data_update);
-        return redirect()->route('admin.movies.show', $movie->slug);
+        return redirect()->route('admin.movies.show', $movie->slug)->with('message', $movie->title . 'Modificato con successo');
     }
 
     /**
@@ -75,7 +75,7 @@ class MovieController extends Controller
     public function destroy(Movie $movie)
     {
         $movie->delete();
-        return redirect()->route('admin.movies.index')->with('message', $movie->title . 'eliminato con successo');
+        return redirect()->route('admin.movies.index')->with('message', $movie->title . ' eliminato con successo');
     }
 
     public function createReview (Movie $movie) {

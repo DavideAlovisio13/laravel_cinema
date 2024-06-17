@@ -6,6 +6,9 @@
         <h2>Movies</h2>
         <a href="{{ route('admin.movies.create') }}" class="btn bg-bordeaux w-25">Inserisci nuovo film</a>
     </div>
+    @if(session()->has('message'))
+    <div class="alert alert-success">{{session()->get('message')}}</div>
+    @endif
     <div class="card my-5">
         <div class="card-body">
             <table class="table">

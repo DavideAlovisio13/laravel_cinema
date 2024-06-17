@@ -66,7 +66,7 @@
     
     <div class="pb-5">
         
-        <button type="submit" class="btn btn-primary ">Crea</button>
+        <button type="submit" class="btn bg-bordeaux ">Crea</button>
         <button type="reset" class="btn btn-secondary ">Svuota campi</button>
     </div>
 </form>

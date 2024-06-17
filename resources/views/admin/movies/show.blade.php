@@ -4,6 +4,9 @@
 <h1 class="text-center">{{$movie->title}}</h1>
 
 
+@if(session()->has('message'))
+<div class="alert alert-success my-3">{{session()->get('message')}}</div>
+@endif
 <section class="container d-flex">
     <div>
         <img src="{{$movie->thumb}}" alt="{{ $movie->title }}" class="w-100">
@@ -30,7 +33,8 @@
         <div>
             <div class="d-flex justify-content-between my-3">
                 <h4 class="">Recensioni</h4>
-                <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="btn bg-bordeaux">Crea recensione</a>
+                <a href="{{ route('admin.movies.reviews.create', $movie->id) }}" class="btn bg-bordeaux">Crea
+                    recensione</a>
             </div>
 
             @foreach ($reviews as $index => $review)

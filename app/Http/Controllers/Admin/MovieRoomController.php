@@ -60,7 +60,7 @@ class MovieRoomController extends Controller
         if ($request->has('slot_id')) {
             $newMovieRoom->slot()->associate($request->slot_id);
         }
-        return redirect()->route('admin.movie_rooms.index')->with('message', 'ok');
+        return redirect()->route('admin.movie_rooms.index')->with('message', 'Proiezione creata con successo');
      }
 
     /**
@@ -98,7 +98,7 @@ class MovieRoomController extends Controller
             $data_update['ticket_price'] = $room->base_price;
         }
         $movieRoom->update($data_update);
-        return redirect()->route('admin.movie_rooms.index');
+        return redirect()->route('admin.movie_rooms.index')->with('message', 'Proiezione modificata con successo');
     }
 
     /**
@@ -108,6 +108,6 @@ class MovieRoomController extends Controller
     {
         
         $movieRoom->delete();
-        return redirect()->route('admin.movie_rooms.index');
+        return redirect()->route('admin.movie_rooms.index')->with('message', 'La proiezione del'. $movieRoom->date_projection .'è stata cancellata con successo');
     }
 }

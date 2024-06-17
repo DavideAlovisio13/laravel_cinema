@@ -6,6 +6,9 @@
         <h2>Proiezioni</h2>
         <a href="{{ route('admin.movie_rooms.create') }}" class="btn bg-bordeaux w-25">Inserisci nuova proiezione</a>
     </div>
+    @if(session()->has('message'))
+    <div class="alert alert-success mt-3">{{session()->get('message')}}</div>
+    @endif
     <div class="card my-5">
         <div class="card-body">
             <table class="table">

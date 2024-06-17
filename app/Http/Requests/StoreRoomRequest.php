@@ -22,6 +22,7 @@ class StoreRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
+            
             'name' => 'required|min:3|max:100|unique:rooms',
             'alias' => 'max:100|nullable',
             'seats' => 'integer|max:500',
