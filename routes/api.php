@@ -23,6 +23,8 @@ Route::get('rooms', [RoomController::class, 'index']);
 
 Route::get('projections', [MovieRoomController::class, 'index']);
 
+Route::get('freeslots', [MovieRoomController::class, 'getSlots']);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
