@@ -46,7 +46,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        $reviews = $movie->reviews;         
+        $reviews = $movie->reviews->sortByDesc('created_at');         
         return view('admin.movies.show', compact('movie', 'reviews'));
 
     }
