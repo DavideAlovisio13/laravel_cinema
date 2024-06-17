@@ -29,7 +29,7 @@
 
         <div class="col-md-6">
             <label for="rating" class="form-label">Valutazione</label>
-            <input type="number" class="form-control @error('rating') is-invalid @enderror" id="rating" name="rating"
+            <input type="number" max ="5" min="1" class="form-control @error('rating') is-invalid @enderror" id="rating" name="rating"
                 value="{{old('rating')}}">
             @error('rating')
                 <div class="alert alert-danger">{{$message}}</div>

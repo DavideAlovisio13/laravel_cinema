@@ -81,7 +81,7 @@ class ReviewController extends Controller
         $form_data = $request->validate([
             'author' => 'required|max:100',
             'comment' => 'required|max:1000',
-            'rating' => 'nullable|numeric|min:1|max:10',
+            'rating' => 'nullable|numeric|min:1|max:5',
         ]);
 
         $review->update($form_data);
