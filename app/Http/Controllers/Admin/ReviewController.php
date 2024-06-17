@@ -13,7 +13,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::all();
+        $reviews = Review::all()->sortByDesc('created_at');
 
         return view('admin.reviews.index', compact('reviews'));
     }
@@ -51,7 +51,7 @@ class ReviewController extends Controller
         $new_review->save();
         $movie = Movie::findorfail($form_data['movie_id']);
         //$reviews=$movie->reviews;
-        return redirect()->route('admin.movies.show', $movie->slug);
+        return redirect()->route('admin.movies.show', $movie->slug)->with('message', 'Nuova recensione di ' . $new_review->author . ' creata con successo');
     }
 
     /**
@@ -87,7 +87,7 @@ class ReviewController extends Controller
         $review->update($form_data);
         $movie = Movie::with('reviews')->findorfail($review->movie_id);
         //$reviews=$movie->reviews;
-        return redirect()->route('admin.movies.show', $movie->slug);
+        return redirect()->route('admin.movies.show', $movie->slug)->with('message', 'Recensione di ' . $review->author . ' modificata con successo');
     }
 
     /**
@@ -101,6 +101,6 @@ class ReviewController extends Controller
         //$reviews=$movie->reviews;
         $review->delete();
         
-        return redirect()->route('admin.movies.show', $movie->slug);
+        return redirect()->route('admin.movies.show', $movie->slug)->with('message', 'Recensione di ' . $review->author . ' eliminata con successo');
     }
 }
