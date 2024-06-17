@@ -64,7 +64,7 @@ class MovieRoomController extends Controller
         if ($request->has('slot_id')) {
             $newMovieRoom->slot()->associate($request->slot_id);
         }
-        return redirect()->route('admin.movie_rooms.index')->with('message', 'Proiezione creata con successo');
+        return redirect()->route('admin.movie_rooms.index')->with('message', 'Proiezione id:'. $newMovieRoom->id .' creata con successo');
      }
 
     /**
