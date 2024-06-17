@@ -6,6 +6,14 @@
         <h2>Proiezioni</h2>
         <a href="{{ route('admin.movie_rooms.create') }}" class="btn bg-bordeaux w-25">Inserisci nuova proiezione</a>
     </div>
+    <form action="{{ route('admin.movie_rooms.index') }}" method="GET" class="my-3 w-25">
+        <div class="input-group">
+            <input type="date" name="date" class="form-control mx-3" value="{{ request('date') }}">
+            <div class="input-group-append">
+                <button class="btn bg-bordeaux text-white" type="submit">Filtra per data</button>
+            </div>
+        </div>
+    </form>
     @if(session()->has('message'))
     <div class="alert alert-success mt-3">{{session()->get('message')}}</div>
     @endif

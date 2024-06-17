@@ -17,13 +17,35 @@ class MovieRoomController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        $movieRoom = MovieRoom::orderBy('date_projection', 'desc')->get();
+        $query = MovieRoom::query();
         $movies = Movie::all();
         $rooms = Room::all();
+        if ($request->has('date') && $request->date) {
+            $query->whereDate('date_projection', $request->date);
+        }
+    
+        $movieRoom = $query->get();
+    
         return view('admin.movie_rooms.index', compact('movieRoom', 'movies', 'rooms'));
     }
+
+    /*
+{
+    $query = MovieRoom::query();
+
+    if ($request->has('date') && $request->date) {
+        $query->whereDate('date_projection', $request->date);
+    }
+
+    $movieRoom = $query->get();
+
+    return view('admin.movie_rooms.index', compact('movieRoom'));
+}
+    
+    */
 
     /**
      * Show the form for creating a new resource.
