@@ -106,6 +106,7 @@ class MovieRoomController extends Controller
      */
     public function destroy(MovieRoom $movieRoom)
     {
+        dd($movieRoom);
         $movieRoom->delete();
         return redirect()->route('admin.movie_rooms.index');
     }
