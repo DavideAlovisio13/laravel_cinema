@@ -14,7 +14,6 @@
             @error('time_slot')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="time_slotHelp" class="form-text text-white">Inserire minimo 3 caratteri</div>
         </div>
 
         <div class="mb-3">
@@ -24,7 +23,6 @@
             @error('start_time')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="start_timeHelp" class="form-text text-white">Inserire minimo 3 caratteri</div>
         </div>
 
         <div class="mb-3">
@@ -34,9 +32,7 @@
             @error('end_time')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
-            <div id="end_timeHelp" class="form-text text-white">Inserire minimo 3 caratteri</div>
         </div>
-
 
         <div class="pb-5">
 
