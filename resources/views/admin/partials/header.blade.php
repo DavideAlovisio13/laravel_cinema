@@ -5,12 +5,12 @@
             {{-- Left button --}}
             <div class="d-flex align-items-center">
                 <div class="minimize-button me-3">
-                    <button>
+                    <button class="btn" type="button" id="closeSidebar">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                 </div>
                 <div class="main-title">
-                    <p>Nome Cinema qui</p>
+                    <p>50s Dream Drive-in</p>
                 </div>
             </div>
             {{-- Right buttons --}}
