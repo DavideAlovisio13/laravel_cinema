@@ -1,6 +1,6 @@
 <nav id="sidebar" class="navbar-dark">
     <div class="logo text-center">
-        <a href="http://localhost:5174" class="nav-link text-uppercase"><img class="img-fluid w-50" src="/images/animated-c.gif" alt="logo"></a>
+        <a href="http://localhost:5174" class="nav-link text-uppercase"><img class="img-fluid w-50" src="/images/logo.png" alt="logo"></a>
     </div>
     <div class="user">
         <div class="profile">
