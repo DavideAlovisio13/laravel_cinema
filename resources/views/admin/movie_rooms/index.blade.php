@@ -15,7 +15,7 @@
                 <thead>
                     <tr>
                         <th scope="col" class="text-bordeaux bg-transparent">Id</th>
-                        <th scope="col" class="text-bordeaux bg-transparent">Movie cover</th>
+                        <!-- <th scope="col" class="text-bordeaux bg-transparent">Movie cover</th> -->
                         <th scope="col" class="text-bordeaux bg-transparent">Movie title</th>
                         <th scope="col" class="text-bordeaux bg-transparent">Room</th>
                         <th scope="col" class="text-bordeaux bg-transparent">Date</th>
@@ -29,10 +29,10 @@
                     @foreach ($movieRoom as $projection)
                         <tr>
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->id }}</td>
-                            <td class="bg-transparent text-black border-bottom-0 w-25">
+                            <!-- <td class="bg-transparent text-black border-bottom-0 w-25">
                                 <img src="{{ $projection->movie->thumb }}" alt="{{ $projection->movie->title }}"
                                     class="w-75">
-                            </td>
+                            </td> -->
                             <td class="bg-transparent text-black border-bottom-0 align-middle">
                                 {{ $projection->movie->title }}</td>
                             <td class="bg-transparent text-black border-bottom-0 align-middle">{{ $projection->room->name }}
